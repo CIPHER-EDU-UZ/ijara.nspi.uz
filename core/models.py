@@ -109,6 +109,10 @@ class Yotoqxona(models.Model):
     yotoqxona_rooms = models.IntegerField(verbose_name="Yotoqona xonalari")
     yotoqxona_type = models.CharField(max_length=10, choices=[('girl', 'Girl'), ('boy', 'Boy')])
 
+    def __str__(self):
+        return self.yotoqxona_name
+
+# class 
 # class Yotoqxona_bron(models.Model):
 
 #    yotoqxona_name = models.ForeignKey(Yotoqxona, on_delete=models.CASCADE, verbose_name='Yotoqxona nomi')
