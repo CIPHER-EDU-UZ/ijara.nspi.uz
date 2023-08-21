@@ -61,18 +61,18 @@ class IjaraUy(models.Model):
     ]
     Xonalar = [
 
-        (1, '1 xona'),
-        (2, '2 xona'),
-        (3, '3 xona'),
-        (4, '4 xona'),
+        ('1 xona', '1 xona'),
+        ('2 xona', '2 xona'),
+        ('3 xona', '3 xona'),
+        ('4 xona', '4 xona'),
 
     ]
     Yotoqlar =[ 
 
-        (1, '1 yotoq'),
-        (2, '2 yotoq'),
-        (3, '3 yotoq'),
-        (4, '4 yotoq'),
+        ('1 yotoq', '1 yotoq'),
+        ('2 yotoq', '2 yotoq'),
+        ('3 yotoq', '3 yotoq'),
+        ('4 yotoq', '4 yotoq'),
 
     ]
     GENDER_CHOICES = [
