@@ -269,9 +269,9 @@ button {
 .banner_taital {
     width: 100%;
     float: left;
-    font-size: 65px;
+    font-size: 45px;
     color: #171414;
-    font-weight: bold;
+    font-weight: bolder;
 }
 .image_1{
     width: 100%;
