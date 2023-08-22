@@ -1,7 +1,0 @@
-<!-- room_list.html -->
-<h1>Student Housing</h1>
-<ul>
-  {% for room in rooms %}
-    <li><a href="{% url 'student_list' room.id %}">Room {{ room.name }}</a> - Reserved Seats: {{ room.reserved_seats }} / {{ room.max_seats }}</li>
-  {% endfor %}
-</ul>
