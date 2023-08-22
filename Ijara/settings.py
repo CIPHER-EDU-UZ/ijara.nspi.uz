@@ -120,6 +120,18 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[
     BASE_DIR/ "static"
 ]
+MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/'
+
+AWS_ACCESS_KEY_ID = 'AKIATJQ3IWD4NTD4Z7SK'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'ijaramedia'
+AWS_S3_FILE_OVERWRITE = False  
+AWS_DEFAULT_ACL = None  
+AWS_S3_REGION_NAME = 'sa-east-1'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_CUSTOM_DOMAIN = 'your-cloudfront-domain.com' # If you’re using S3 as a CDN like CloudFront
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # settings.py
 # Default primary key field type

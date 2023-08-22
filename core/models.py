@@ -1,5 +1,22 @@
 from django.db import models
 
+class Test(models.Model):
+    t_image = models.ImageField(upload_to='ijara/')
+class Home(models.Model):
+    Shahar = models.CharField(max_length=150, verbose_name='Shahar nomi', null=True,)
+    Mahallasi = models.CharField(max_length=150, verbose_name='Mahalla nomi', null=True,)
+    Manzil = models.CharField(max_length=150, verbose_name='Manzili', null=True,)
+    Ijarachi = models.CharField(max_length=150, verbose_name='Ijarachining ismi', null=True,)
+    Telefon = models.CharField(max_length=150, verbose_name='Telefon raqami', null=True,)
+    Yigit = models.CharField(max_length=150, verbose_name='Yigitlar uchun', null=True,)
+    Qiz = models.CharField(max_length=150, verbose_name='Qizlar uchun', null=True,)
+    Holati = models.CharField(max_length=150, verbose_name='Ijara holati', null=True,)
+
+    def __str__(self):
+        if self.Shahar is not None:
+            return self.Shahar
+        return "Record with no specified Shahar"
+    
 class Stuudents(models.Model):
     student_name = models.CharField(max_length=25, verbose_name="Student ismi")
     student_lastnem = models.CharField(max_length=25, verbose_name="Student familiyasi")

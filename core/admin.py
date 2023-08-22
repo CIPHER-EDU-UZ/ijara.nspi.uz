@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import *
-
+admin.site.register(Test)
+class Homes(admin.ModelAdmin):
+    list_display = ('Shahar', 'Mahallasi', 'Manzil', 'Ijarachi', 'Telefon', 'Yigit', 'Qiz', 'Holati',)
+admin.site.register(Home, Homes)
 class StudentAdmin(admin.ModelAdmin):
     list_display = (
         'student_name',
