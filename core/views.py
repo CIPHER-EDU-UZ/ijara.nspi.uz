@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from openpyxl import load_workbook
 from django.core.paginator import Paginator
 from .models import *
+from .forms import *
 from django.views.generic.list import ListView
 
 def upload_excel(request):
@@ -38,11 +39,36 @@ def upload_excel(request):
 
     return render(request, 'upload_excel.html')
 
-class Home(ListView):
+# class Home(ListView):
+#     paginate_by = 25
+#     template_name = 'index.html'
+#     model = Home
+#     context_object_name = 'ijara' 
+
+
+class HomeListView(ListView):
     paginate_by = 25
     template_name = 'index.html'
     model = Home
-    context_object_name = 'ijara' 
+    context_object_name = 'ijara'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = ArizaForm()  # Add the form to the context
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = ArizaForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home_list')  # Redirect to the home_list view after successful submission
+        else:
+            context = self.get_context_data()
+            context['form'] = form
+            return render(request, self.template_name, context)
+
+home_list_view = HomeListView.as_view()
+
 def test(request):
     ts = Test.objects.all()
     return render(request, 'test.html', {'ts':ts})

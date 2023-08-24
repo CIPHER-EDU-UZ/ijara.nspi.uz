@@ -30,7 +30,7 @@ class Ariza(models.Model):
         ('tajikistan', 'Tajikistan'),
         ('afganistan','Afganistan'),
     ]
-    viloyat = models.CharField(max_length=100, choices=mamlakat_choice, verbose_name='Region', blank=False)
+    mamlakat = models.CharField(max_length=100, choices=mamlakat_choice, verbose_name='Region', blank=False)
     viloyat_choice  = [
         ('tashkent', 'Tashkent'),
         ('samarkand', 'Samarkand'),
@@ -49,26 +49,33 @@ class Ariza(models.Model):
     viloyat = models.CharField(max_length=100, choices=viloyat_choice, verbose_name='Region', null=False)
     tuman = models.CharField(max_length=30, verbose_name="Tuman nomini kriting", null=False)
     jinsi_choice = [
-        'erkak', 'Erkak',
-        'ayol', 'Ayol'
+        ('erkak', 'Erkak'),
+        ('ayol', 'Ayol'),
     ]
     jinsi = models.CharField(max_length=15, choices=jinsi_choice, verbose_name='Jinsini tanlang', null=False)
     pasport = models.CharField(max_length=2, verbose_name="pasport seriya")
     pasport_num = models.IntegerField(verbose_name="Pasport raqami")
     manzil = models.CharField(max_length=150, verbose_name='Yashash manzili')
     fakulte_choices = [
-        'matematika va informatika', 'Matematika va Informatika',
-        'rus va qozoq filialogiyasi', 'Rus va Qozoq filialogiyasi',
-        'tarix', 'Tarix',
-        'ingliz tili va adabioti', 'Ingliz tili va Adabioti',
-        'jismoniy madaniyat', 'Jismoniy Madaniyat',
-        'sa\'atshunoslik', 'Sa\'atshunoslik',
-        'tibbiyot', 'Tibbiyot',
+        ('matematika va informatika', 'Matematika va Informatika'),
+        ('rus va qozoq filialogiyasi', 'Rus va Qozoq filialogiyasi'),
+        ('tarix', 'Tarix'),
+        ('ingliz tili va adabioti', 'Ingliz tili va Adabioti'),
+        ('jismoniy madaniyat', 'Jismoniy Madaniyat'),
+        ('sa\'atshunoslik', 'Sa\'atshunoslik'),
+        ('tibbiyot', 'Tibbiyot'),
     ]
 
-    fakultet = models.CharField(max_length=15, choices=fakulte_choices, verbose_name='Fakultetni tanlang', null=False)
-    yunlaish = models.CharField(max_length=150, verbose_name="yunalishni kriting")
+    fakultet = models.CharField(max_length=150, choices=fakulte_choices, verbose_name='Fakultetni tanlang', null=False)
+    yunalish = models.CharField(max_length=150, verbose_name="yunalishni kriting")
     grux = models.CharField(max_length=30,  verbose_name='grux nomi')
+    kurs_choice = [
+        ('1kurs', '1 Kurs'),
+        ('2kurs', '2 Kurs'),
+        ('3kurs', '3 Kurs'),
+        ('4kurs', '4 Kurs'),
+    ]
+    kurs = models.CharField(max_length=15, choices=kurs_choice, verbose_name='kursni tanlang', null=False)
     telefon = models.IntegerField(verbose_name='Telefon raqam')
     uploaded_file = models.FileField(upload_to='xujjatlar/')
 

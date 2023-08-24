@@ -49,3 +49,20 @@ class AdminUy(admin.ModelAdmin):
     )
 admin.site.register(IjaraUy, AdminUy)
 admin.site.register(Yotoqxona)
+class ArizaAdmin(admin.ModelAdmin):
+    list_display = ('ism',
+                    'familiya',
+                    'sharifi', 
+                    'mamlakat', 
+                    'viloyat', 
+                    'tuman', 
+                    'jinsi', 
+                    'pasport', 
+                    'manzil', 
+                    'fakultet', 
+                    'yunalish',
+                    'grux',
+                    'kurs',
+                    'telefon',
+                    'uploaded_file', )
+admin.site.register(Ariza,ArizaAdmin)
