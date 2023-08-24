@@ -3,7 +3,9 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path("", home_list_view, name="home"),
-    path('upload/', upload_excel, name='upload_excel'),
-    path('test/', test, name='test')
+    path('', HomeListView.as_view(), name='home_list'),
+    path('create/', create_ariza, name='create_ariza'),
+    path('ariza/<slug:unique_id>/', ariza_detail_view, name='ariza_detail'),
+    path('approve/<slug:unique_id>/', approve_ariza, name='approve_ariza'),
+    path('check_status/', check_status, name='check_status'),
 ]

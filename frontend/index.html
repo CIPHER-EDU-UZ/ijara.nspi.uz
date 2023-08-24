@@ -31,15 +31,24 @@
 <body>
     <!-- header section start -->
     <div class="header_section">
+      
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="logo"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"></a></div>
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <form action="{% url 'check_status' %}" method="post">
+          {% csrf_token %}
+          <label for="unique_id">Enter Application ID:</label>
+          <input type="text" id="unique_id" name="unique_id">
+          <button type="submit">Check Status</button>
+      </form>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Bosh sahifa</a>
+              <a class="nav-link" href="{% url 'home_list' %}">Bosh sahifa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#ariza">Ariza yuborsh</a>
@@ -334,23 +343,14 @@
     </div>
     <!-- design section end --> 
     <!-- contact section start -->
-    <div class="contact_section col-md-12">
-      <div class="container">
-        <h1 class="solution_text">Ariza yuborish</h1>
-        <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
+
     <!-- contact section end -->
     <!-- footer section start -->
     <div class="footer_section layout_padding">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-sm-12">
-            <div class="footer_logo"><a href="{% url 'home' %}" style="font-size: 16px;"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"> Navoiy davlat pedagogika instituti</a></div>
+            <div class="footer_logo"><a href="{% url 'home_list' %}" style="font-size: 16px;"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"> Navoiy davlat pedagogika instituti</a></div>
             <h4 class="contact_text">Contact Us</h4>
             <div class="call_section">
               <div class="call_section_left">

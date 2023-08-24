@@ -1,7 +1,10 @@
 from django.db import models
+from django.utils.crypto import get_random_string
+import uuid
 
 class Test(models.Model):
     t_image = models.ImageField(upload_to='ijara/')
+
 class Home(models.Model):
     Shahar = models.CharField(max_length=150, verbose_name='Shahar nomi', null=True,)
     Mahallasi = models.CharField(max_length=150, verbose_name='Mahalla nomi', null=True,)
@@ -19,8 +22,9 @@ class Home(models.Model):
     
 
 class Ariza(models.Model):
-    ism = models.CharField(max_length=15, verbose_name="Ismi",  null=False)
-    familiya = models.CharField(max_length=20, verbose_name='Familiyasi', null=False)
+    unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    ism = models.CharField(max_length=15, verbose_name="Ismi",  null=False, unique=True)
+    familiya = models.CharField(max_length=20, verbose_name='Familiyasi', null=False, )
     sharifi = models.CharField(max_length=20, verbose_name='Otasining ismi', null=False)
     mamlakat_choice = [
         ('uzbekistan', 'O\'zbekistan'),
@@ -28,7 +32,7 @@ class Ariza(models.Model):
         ('kazakhstan', 'Kazakhstan'),
         ('kyrgyzstan', 'Kyrgyzstan'),
         ('tajikistan', 'Tajikistan'),
-        ('afganistan','Afganistan'),
+        ('afganistan', 'Afganistan'),
     ]
     mamlakat = models.CharField(max_length=100, choices=mamlakat_choice, verbose_name='Region', blank=False)
     viloyat_choice  = [
@@ -53,8 +57,8 @@ class Ariza(models.Model):
         ('ayol', 'Ayol'),
     ]
     jinsi = models.CharField(max_length=15, choices=jinsi_choice, verbose_name='Jinsini tanlang', null=False)
-    pasport = models.CharField(max_length=2, verbose_name="pasport seriya")
-    pasport_num = models.IntegerField(verbose_name="Pasport raqami")
+    pasport = models.CharField(max_length=2, verbose_name="pasport seriya", unique=True)
+    pasport_num = models.IntegerField(verbose_name="Pasport raqami", unique=True)
     manzil = models.CharField(max_length=150, verbose_name='Yashash manzili')
     fakulte_choices = [
         ('matematika va informatika', 'Matematika va Informatika'),
@@ -76,13 +80,21 @@ class Ariza(models.Model):
         ('4kurs', '4 Kurs'),
     ]
     kurs = models.CharField(max_length=15, choices=kurs_choice, verbose_name='kursni tanlang', null=False)
-    telefon = models.IntegerField(verbose_name='Telefon raqam')
+    telefon = models.IntegerField(verbose_name='Telefon raqam', unique=True)
     uploaded_file = models.FileField(upload_to='xujjatlar/')
+    
+    unique_id = models.CharField(max_length=10, unique=True, editable=False,)
+    comments = models.TextField(blank=True, verbose_name='Comments')
+    # is_approved = models.BooleanField(default=False, verbose_name='Is Approved')
+
+    def save(self, *args, **kwargs):
+        if not self.unique_id:
+            self.unique_id = get_random_string(length=10)
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        if self.ism is not None:
-            return self.ism
-        return "recording"
+        return self.ism
+    
 class Stuudents(models.Model):
     student_name = models.CharField(max_length=25, verbose_name="Student ismi")
     student_lastnem = models.CharField(max_length=25, verbose_name="Student familiyasi")
