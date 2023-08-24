@@ -61,11 +61,11 @@ class HomeListView(ListView):
         form = ArizaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home_list')  # Redirect to the home_list view after successful submission
+            return redirect('home')  # Redirect to the home_list view after successful submission
         else:
             context = self.get_context_data()
             context['form'] = form
-            return render(request, self.template_name, context)
+            return render(request, self.index.html, context)
 
 home_list_view = HomeListView.as_view()
 
