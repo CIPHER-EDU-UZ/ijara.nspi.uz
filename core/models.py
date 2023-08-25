@@ -5,6 +5,7 @@ import uuid
 class Test(models.Model):
     t_image = models.ImageField(upload_to='ijara/')
 
+<<<<<<< HEAD
 class Yotoqxonalar(models.Model):
     name = models.CharField(max_length=150, verbose_name='Yotoqxona nomi')
     image= models.ImageField(upload_to='yotoqxona/')
@@ -12,6 +13,8 @@ class Yotoqxonalar(models.Model):
     about = models.CharField(max_length=150, verbose_name='Yotoqxona xaqida')
     def __str__(self):
         return self.name
+=======
+>>>>>>> 3ce5759c8b8da84a6cbcd2ad68b082be7e53ef04
 class Home(models.Model):
     Shahar = models.CharField(max_length=150, verbose_name='Shahar nomi', null=True,)
     Mahallasi = models.CharField(max_length=150, verbose_name='Mahalla nomi', null=True,)

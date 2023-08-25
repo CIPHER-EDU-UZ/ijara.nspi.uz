@@ -55,15 +55,36 @@ def upload_excel(request):
 class HomeListView(ListView):
     paginate_by = 15
     template_name = 'index.html'
+<<<<<<< HEAD
     model = Home
     context_object_name = 'ij'
+=======
+    model = Ariza
+    context_object_name = 'ijara'
+>>>>>>> 3ce5759c8b8da84a6cbcd2ad68b082be7e53ef04
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = ArizaForm()
+<<<<<<< HEAD
         context['yotoqxonalar'] = Yotoqxonalar.objects.all() 
+=======
+>>>>>>> 3ce5759c8b8da84a6cbcd2ad68b082be7e53ef04
         return context
     
+class ArizaDetailView(DetailView):
+    model = Ariza
+    template_name = 'ariza_detail.html'
+    context_object_name = 'ariza'
+    slug_field = 'unique_id'
+    slug_url_kwarg = 'unique_id'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(user=self.request.user)
+        return queryset
+
 class ArizaDetailView(DetailView):
     model = Ariza
     template_name = 'ariza_detail.html'
