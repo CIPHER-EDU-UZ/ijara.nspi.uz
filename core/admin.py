@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 admin.site.register(Test)
+admin.site.register(Yotoqxonalar)
 class Homes(admin.ModelAdmin):
     list_display = ('Shahar', 'Mahallasi', 'Manzil', 'Ijarachi', 'Telefon', 'Yigit', 'Qiz', 'Holati',)
 admin.site.register(Home, Homes)
@@ -48,7 +49,6 @@ class AdminUy(admin.ModelAdmin):
         'proximity_to_public_transportation',
     )
 admin.site.register(IjaraUy, AdminUy)
-admin.site.register(Yotoqxona)
 class ArizaAdmin(admin.ModelAdmin):
     list_display = ('ism',
                     'familiya',

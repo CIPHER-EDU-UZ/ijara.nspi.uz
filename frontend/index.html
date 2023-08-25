@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 <!-- site metas -->
-<title>Dhinchak</title>
+<title>Ijara.nspi.uz</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content=""> 
@@ -31,32 +31,46 @@
 <body>
     <!-- header section start -->
     <div class="header_section">
+      
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="logo"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"></a></div>
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Bosh sahifa</a>
+              <a class="nav-link" href="{% url 'home_list' %}">Bosh sahifa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#ariza">Ariza yuborsh</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                Ariza holatini tekshirish
+              </a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="template.html">3</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="proveding.html">3</a>
+            </li>-->
+            <li class="nav-item"> 
+              <a class="nav-link" href="">
+                <i class="fa fa-phone" aria-hidden="true"></i> +998 79 225-07-32
+              </a>
             </li>
-            <li class="nav-item"> -->
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class="fa fa-envelope" aria-hidden="true"></i> @info@nspi.uz
+              </a>
             </li>
+            <!-- <div class="search_icon"><a href="#"><img src="{% static 'images/call-icon.png' %}"><span class="padding_left0">Aloqa uchun : +998 79 225-07-32</span></a></div>
+            <div class="search_icon"><a href="#"><img src="{% static 'images/mail-icon.png' %}"><span class="padding_left0">Email : @info@nspi.uz</span></a></div> -->
           </ul>  
-          <form class="form-inline my-2 my-lg-0">
-            <div class="search_icon"><a href="#"><img src="{% static 'images/call-icon.png' %}"><span class="padding_left0">Aloqa uchun : +998 79 225-07-32</span></a></div>
-            <div class="search_icon"><a href="#"><img src="{% static 'images/mail-icon.png' %}"><span class="padding_left0">Email : @info@nspi.uz</span></a></div>
-          </form>
+            
         </div>
       </nav>
     </div>
@@ -195,21 +209,16 @@
           <div class="carousel-inner" id="ijara">
             <div class="carousel-item active">
               <div class="row">
+                {% for post in yotoqxonalar %}
                 <div class="col-sm-4">
-                  <div class="image_5"><img src="{% static 'images/img-5.png' %}"></div>
-                  <h3 class="cool_text">Free Hairstyle Website html Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="image_5"><img src="{{ post.image.url }}"></div>
+                  <h3 class="cool_text">{{post.name}}</h3>
+                  <h4 class="lorem_dolor_text"><i class="fa fa-home" aria-hidden="true"></i> {{post.sigm}} yotoqxona sig'imi</h4>
+                  <h5 class="lorem_dolor_text">
+                    {{post.about}}
+                  </h5>
                 </div>
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-6.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website html Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-7.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website PSD Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+                {% endfor %}
               </div>
             </div>
             <!-- <div class="carousel-item">
@@ -257,7 +266,7 @@
     <!-- template section end -->
     <!-- design section start -->
     <div class="design_section layout_padding">
-      <div class="container">
+      <div class="container " style="background-color: rgba(228, 222, 222, 0.377);">
         <center><h3 class="mark_text " id="yuriqnoma">Ijara honadonlar ro'yxati</h3></center>
         <table class="table table-hover">
           <thead>
@@ -273,84 +282,78 @@
             </tr>
           </thead>
           <tbody>
-            {% for home in ijara %}
+            {% for home in ij %}
             <tr>
               <th scope="row">{{home.Shahar}}</th>
               <td>{{home.Mahallasi}}</td>
               <td>{{home.Manzil}}</td>
-              <td>{{home.Manzil}}</td>
               <td>{{home.Ijarachi}}</td>
               <td>{{home.Telefon}}</td>
+              <td>{{home.Yigit}}</td>
               {% if home.Yigit == 'Yigit' %}
               <td>{{ home.Yigit }}</td>
               {% else %}
               
               <td>{{ home.Qiz }}</td>
               {% endif %}
-              <td>@mdo</td>
+              <td>{{home.Holati}}</td>
             </tr>
             {% endfor %}
           </tbody>
+          
         </table>
-                  <nav aria-label="Page navigation example">
-            <ul class="pagination">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+              
           {%  if page_obj.has_previous %}  
-          <li class="page-item">
-              <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-              </a>
-          </li>   
-      {% endif %} 
-          {% for p in paginator.page_range %}
-           
-              {% if page_obj.number == p %}
-                 <li class="page-item" style="color:red !important;">
-                      <a href="" class="page-link" style="color:red !important;">{{p}}</a>
-                 </li>
-              {% elif p >= page_obj.number|add:-3 and p <= page_obj.number|add:3 %}
-              <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
-              {% endif %}                    
-          {% endfor %}
-          {%  if page_obj.has_next %}  
               <li class="page-item">
-                  <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
+                  <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
                   </a>
-              </li>
-          {% endif %}
-        </ul>
-      </nav>
+              </li>   
+          {% endif %} 
+              {% for p in paginator.page_range %}
+               
+                  {% if page_obj.number == p %}
+                     <li class="page-item" style="color:red !important;">
+                          <a href="" class="page-link" style="color:red !important;">{{p}}</a>
+                     </li>
+                  {% elif p >= page_obj.number|add:-3 and p <= page_obj.number|add:3 %}
+                  <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                  {% endif %}                    
+              {% endfor %}
+              {%  if page_obj.has_next %}  
+                  <li class="page-item">
+                      <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                      </a>
+                  </li>
+              {% endif %}
+          </ul>
+        </nav>
+      
       </div>
     </div>
-    <div class="design_section layout_padding">
+    <!-- <div class="design_section layout_padding">
       <div class="container">
         <h1 class="solution_text">Wonderful marketing design</h1>
         <div class="image_4"><img src="images/img-4.png"></div>
         <p class="ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
         <div class="make_bt"><a href="#">Make Now</a></div>
       </div>
-    </div>
+    </div> -->
     <!-- design section end --> 
     <!-- contact section start -->
-    <div class="contact_section col-md-12">
-      <div class="container">
-        <h1 class="solution_text">Ariza yuborish</h1>
-        <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
+
     <!-- contact section end -->
     <!-- footer section start -->
     <div class="footer_section layout_padding">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-sm-12">
-            <div class="footer_logo"><a href="{% url 'home' %}" style="font-size: 16px;"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"> Navoiy davlat pedagogika instituti</a></div>
+            <div class="footer_logo"><a href="{% url 'home_list' %}" style="font-size: 16px;"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"> Navoiy davlat pedagogika instituti</a></div>
             <h4 class="contact_text">Contact Us</h4>
             <div class="call_section">
               <div class="call_section_left">

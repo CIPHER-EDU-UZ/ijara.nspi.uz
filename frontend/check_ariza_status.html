@@ -1,0 +1,9 @@
+
+
+  <h1>Check Ariza Status</h1>
+  
+  <form method="get" action="{% url 'check_ariza_status' %}">
+    <label for="unique_id">Enter your ID number:</label>
+    <input type="text" name="unique_id" id="unique_id" required>
+    <button type="submit">Check Status</button>
+  </form>
