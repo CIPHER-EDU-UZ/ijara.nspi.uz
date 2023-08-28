@@ -1,0 +1,220 @@
+//////////////////////////////////////////////////////////
+
+Tank - Creative Portfolio Showcase HTML Website Template
+
+Changelog
+
+//////////////////////////////////////////////////////////
+
+
+
+======================
+Updating information:
+======================
+
+Explanation: Because of the nature of the HTML, it is not possible to use dynamic features to update the template automatically. All code changes and updates must be made manually!
+
+IMPORTANT!: Before you proceed to update, make sure that you have made copies of all the template files, 
+in case something goes wrong then you can restore the previous version.
+
+The best way to update the template is to use some file comparison software to compare the differences between the old and new template versions (I recommend “WinMerge”: http://winmerge.org/). Then make the necessary changes. I know this may be time-consuming, but unfortunately, there is no easier solution.
+
+
+
+
+-------------------------
+v1.7 - 27 September 2022
+-------------------------
+
+- Fixed: Light background image issue on the fullscreen slider.
+- Fixed: Header logo issue if overlay menu is open.
+- Fixed: Accordion item issue if class "is-open" is enabled.
+
+
+Changed files:
+
+theme.js
+theme.css
+
+
+
+---------------------
+v1.6.1 - 12 May 2022
+---------------------
+
+- Fixed: Shop product carousel lazy loading issue
+- Improved: Shop product grid layout on small screens
+- Improved: Minor CSS improvements
+
+Changed files:
+
+shop.css
+theme.css
+shop.js
+
+
+
+---------------------
+v1.6 - 15 April 2022
+---------------------
+
+New: Added page "shop-list.html"
+New: Added page "shop-list-classic.html"
+New: Added page "shop-single.html"
+New: Added page "shop-single-simple.html"
+New: Added page "shop-cart.html"
+New: Added page "shop-checkout.html"
+New: Added page "shop-order-details.html"
+New: Added page "shop-wishlist.html"
+New: Added page "shop-login.html"
+New: Added page "shop-register.html"
+New: Added page "shop-reset-password.html"
+New: Added new element "Search"
+New: Added new element "Tabs"
+New: Added new element "Table"
+New: Added new file "assets/css/shop.css"
+New: Added new file "assets/js/shop.js"
+
+Improved: Page transitions
+Improved: Forms
+Improved: Contact form
+Improved: Sliding sidebar
+Improved: Page header "Share"
+Improved: Logo wall (Brands section)
+Improved: "Swiper" lazy loading
+Improved: File "theme.js"
+Improved: Minor CSS improvements
+Improved: Documentation (Contact Form section)
+
+Updated: "Swiper" to latest version (class "swiper-container" is replaced with "swiper")
+Updated: "GSAP" to latest version
+Updated: "Smooth Scrollbar" to latest version
+
+Fixed: Scroll between anchors issue
+Fixed: Portfolio carousel dragging issue
+Fixed: Content carousel pagination issue
+Fixed: Content carousel navigation issue
+
+
+Changed files: 
+
+theme.css
+theme.js
+all .html files
+
+
+
+-----------------------
+v1.5.1 - 01 March 2022
+-----------------------
+
+- Fixed: Browser "Back" button issue.
+
+Changed file: "theme.js"
+
+Note: Clear your browser cache after the update!
+
+
+
+
+-------------------------
+v1.5 - 17 November 2021
+-------------------------
+
+- Fixed: "Back To Top" button issue.
+- Fixed: project share issue if smooth scroll is disabled.
+- Improved: Page header alignment.
+- Improved: Page header parallax.
+- Improved: Page header image shadow.
+
+
+
+
+-------------------------
+v1.4 - 22 September 2021
+-------------------------
+
+- Fixed: Portfolio list item image hover issue.
+- Fixed: Gallery item image parallax issue.
+- Fixed: "Made With Love" appearing issue.
+- Fixed: Page header title issue if dark style is enabled.
+- Improved: Scroll down circle hover.
+
+
+
+
+-------------------------
+v1.3 - 08 September 2021
+-------------------------
+
+- New: Added new page "404.html". (new image "assets/img/page-header/ph-7.jpg")
+- New: Added folder for portfolio smaller images (assets/img/portfolio/small)
+- Fixed: Portfolio filter position and alignment issue.
+- Fixed: Blog post navigation issue.
+- Fixed: Footer columns issue on IOS devices.
+- Fixed: Footer social buttons alignment issue.
+- Fixed: Classic menu issue on smaller screens.
+- Fixed: Image parallax and zoom-in issue on scroll.
+- Fixed: Magnetic cursor issue on Chrome.
+- Improved: General CSS improvements.
+
+
+
+
+----------------------
+v1.2 - 02 August 2021
+----------------------
+
+- New pages added:
+    landing-page-1.html
+    landing-page-2.html
+    portfolio-grid-creative-1.html
+    portfolio-grid-creative-2.html
+    portfolio-interactive-compact.html
+
+- Fixed: Portfolio grid item video height issue.
+- Fixed: Page header meta issue.
+- Fixed: Classic menu hover issue.
+- Fixed: Portfolio interactive scrolling speed issue.
+- Fixed: Scrolling text container scrolling speed issue.
+- Updated: "GSAP" to the latest version.
+- Updated: "Smooth Scrollbar" to the latest version.
+- Updated: "Swiper" to the latest version.
+- Updated: "Font Awesome" to the latest version.
+- Improved: Changed scroll down circle size a bit.
+- Improved: Minor code improvements.
+- Improved: Page header image.
+- Improved: Page header caption.
+- Improved: Contact page.
+- Improved: Blog post conmment section.
+
+
+
+
+---------------------
+v1.1 - 23 July 2021
+---------------------
+
+- New pages added: 
+
+    - blog-interactive.html
+    - blog-list.html
+    - blog-classic.html
+    - blog-classic-sidebar.html
+    - blog-post.html
+    - blog-post-classic-sidebar.html
+    - blog-archive.html
+
+- Changed: "tt-project-share" is now "ph-share" (renamed all classes).
+- Fixed: Page header video background issue.
+- Fixed: Classic menu hover issue.
+- Improved: Overlay menu.
+
+
+
+
+---------------------
+v1.0 - 17 July 2021
+---------------------
+
+Initial Release.

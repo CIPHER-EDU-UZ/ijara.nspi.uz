@@ -1,416 +1,591 @@
 {% load static %}
-{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!-- basic -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- mobile metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<!-- site metas -->
-<title>Ijara.nspi.uz</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content=""> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-<link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
-<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
-<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"> 
-<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-</head>
-<body>
-    <!-- header section start -->
-    <div class="header_section">
-      
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="logo"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"></a></div>
-       
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <form action="{% url 'check_status' %}" method="post">
-          {% csrf_token %}
-          <label for="unique_id">Enter Application ID:</label>
-          <input type="text" id="unique_id" name="unique_id">
-          <button type="submit">Check Status</button>
-      </form>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home_list' %}">Bosh sahifa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#ariza">Ariza yuborsh</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">
-                Ariza holatini tekshirish
-              </a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="template.html">3</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="proveding.html">3</a>
-            </li>-->
-            <li class="nav-item"> 
-              <a class="nav-link" href="">
-                <i class="fa fa-phone" aria-hidden="true"></i> +998 79 225-07-32
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">
-                <i class="fa fa-envelope" aria-hidden="true"></i> @info@nspi.uz
-              </a>
-            </li>
-            <!-- <div class="search_icon"><a href="#"><img src="{% static 'images/call-icon.png' %}"><span class="padding_left0">Aloqa uchun : +998 79 225-07-32</span></a></div>
-            <div class="search_icon"><a href="#"><img src="{% static 'images/mail-icon.png' %}"><span class="padding_left0">Email : @info@nspi.uz</span></a></div> -->
-          </ul>  
-            
-        </div>
-      </nav>
-    </div>
-    <div class="banner_section layout_padding">
-      <div class="container">
-        <div id="my_slider" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-6">
-                  <h2 class="banner_taital">Talabaga qulaylik<br></h2><h3> Navoiy davlat pedagogika instituti talabalari endilikda talabalr turar joyi uchun online ariza yuborishlari mumkun</h3>
-                  <div class="contact_bt"><a href="">Ariza berish</a></div>
-                </div>
-                <div class="col-md-6">
-                  <div class="image_1"><img src="{% static 'images/img-1.png' %}"></div>
-                </div>
-              </div>
-            </div><!-- 
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <h1 class="banner_taital">Talabalar<br></h1><h3> turar joy yotoqxonasi uchun online ariza berish </h3>
-                  <div class="contact_bt"><a href="">Ariza berish</a></div>
-                </div>
-                <div class="col-md-6">
-                  <div class="image_1"><img src="{% static 'images/img-1.png' %}"></div>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-              <i class="fa fa-left"><img src="{% static 'images/left-icon.png' %}"></i>
-            </a>
-            <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-              <i class="fa fa-right"><img src="{% static 'images/right-icon.png' %}"></i>
-            </a>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- banner section end -->
-    <!-- templet bg section start -->
-    <div class="templet_bg">
-    <!-- email section start -->
-    <div class="email_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="image_2"><img src="{% static 'images/img-2.png' %}"></div>
-          </div>
-          <div class="col-md-6">
-            <h1 class="mark_text">Talabalar <span style="color: rgb(0, 102, 255);">turar joyi</span> haqida</h1>
-            <h5 class="lorem_text">Navoiy davlat pedagogika institutida umumiy sig‘imi 2695 nafar talabalarga mo‘ljallangan 3 ta talabalar turar joylari mavjud bo‘lib, ularning sig‘imi <a href="#ijara"  style="color: rgb(0, 102, 255);">quyid ko'rsatilngan</a></h5>
-            <h5>
-              2023-2024 - o'quv yilidan boshlab Termiz davlat universitetida talabalarni talabalar turar joylariga arizalarni qabul qilish onlayn shaklda amalga oshiriladi.
-            </h5>
-            <h5>
-              Arizalar universitet Talabalarni turar joy bilan ta'minlash ishlarini muvofiqlashtirish bo`limi tomonidan o'rganilib chiqiladi va platformada e'lon qilinadi.
-            </h5>
-            <h5>
-              O‘zbekiston Respublikasi oliy va o‘rta maxsus taʼlim vazirining 2019-yil 1-noyabrdagi №1019-sonli “Talaba (o‘quvchi)lar turar joyi faoliyatiga oid namunaviy hujjatlarni tasdiqlash to‘g‘risida”gi buyrug‘i asosida Termiz davlat universitetidagi mavjud 6 ta <a href="#yuriqnoma"  style="color: rgb(0, 102, 255);">TTJlarga talabalarni joylashtirish yo'riqnomasi quyida keltirilgan</a>:
-            </h5>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="solution_section layout_padding">
-      <div class="container">
-        <!-- <h1 class="solution_text">Talabalr turar joyi haqida! </h1> -->
-        <div class="image_3"><img src="{% static 'images/img-3.png' %}"></div>
-       
-          <center><h3 class="mark_text " id="yuriqnoma">YO'RIQNOMA</h3></center>
-          <h4>
-              Talaba va oʻquvchilarni turar joylariga joylashtirishda mavjud oʻrinlardan extiyoj va talab yuqori boʻlgan xolatlarda quyidagi mezonlar ketma- ketligi asosida oʻquvchi va talabalar ustunlikka ega boʻladi:
-          </h4>
-          <h4>
-              Chin yetim talaba-oʻquvchilar (kursidan qatʼiy nazar)
-          </h4>
-          <h4>  
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>             
-            “Mexribonlik uylari” tarbiyalanuvchilari
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-             Nogironligi mavjud talaba-o‘quvchilar (kursidan qatʼiy nazar)
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            Ijtimoiy ximoyaga muxtoj, moddiy axvoli og‘ir talabalar (shuningdek, bitta oilada 2 yoki undan ortiq shaxs t o‘lov-shartnoma asosida o‘qiyotgan b o‘lsa)
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            Xorijdan kelib tahsil olayotgan talabalar
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            1 -2 kurs talabalari
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            Talaba (o‘quvchi) qizlar
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            Yoshlar ittifoqining faollari
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            Xalqaro miqyosdagi fan olimpiadalarida g‘oliblikni qo‘lga kiritgan talabalar
-          </h4>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            Yozgi taʼtil davrida “Fidokor” yoshlar mexnat otryadi tarkibida talabalar turar joylarini taʼmirlashda ishtirok etgan talabalar
-          </p>
-          <h4>
-            <i class="fa fa-check" style="font-size:36px; color: rgb(7, 255, 40);"></i>
-            Talabalar turar joyida doimiy ravishda talabalar kengashi raisi, qavat sardorlari va boshqa jixatlari bilan doimiy ravishda faollik ko‘rsatib kelayotgan talabalar
-              
-          </h4>
-          <h4>
-              Eslatma! Ta’limning kechki va sirtqi shaklida tahsil olayotgan va turmushga chiqqan oilali talabalar TTJga arizalari qabul qilinmaydi.
-          </h4>
-        <div class="make_bt"><a href="#">Ariza berish</a></div>
-      </div>
-    </div>
-    <!-- solution section end --> 
-    <!-- template section start -->
-    <div class="template_section layout_padding">
-      <div class="container">
-        <h1 class="solution_text">Talabalr turar joylari</h1>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" id="ijara">
-            <div class="carousel-item active">
-              <div class="row">
-                {% for post in yotoqxonalar %}
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="{{ post.image.url }}"></div>
-                  <h3 class="cool_text">{{post.name}}</h3>
-                  <h4 class="lorem_dolor_text"><i class="fa fa-home" aria-hidden="true"></i> {{post.sigm}} yotoqxona sig'imi</h4>
-                  <h5 class="lorem_dolor_text">
-                    {{post.about}}
-                  </h5>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-            <!-- <div class="carousel-item">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-5.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website html Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-6.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website html Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-7.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website PSD Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-5.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website html Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-6.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website html Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="col-sm-4">
-                  <div class="image_5"><img src="images/img-7.png"></div>
-                  <h3 class="cool_text">Free Hairstyle Website PSD Template</h3>
-                  <p class="lorem_dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- template section end -->
-    <!-- design section start -->
-    <div class="design_section layout_padding">
-      <div class="container " style="background-color: rgba(228, 222, 222, 0.377);">
-        <center><h3 class="mark_text " id="yuriqnoma">Ijara honadonlar ro'yxati</h3></center>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Shahar</th>
-              <th scope="col">Mahallasi</th>
-              <th scope="col">Manzil</th>
-              <th scope="col">Ijarachi</th>
-              <th scope="col">Telefon</th>
-              <th scope="col">Yigit</th>
-              <th scope="col">Qiz</th>
-              <th scope="col">Holati</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for home in ij %}
-            <tr>
-              <th scope="row">{{home.Shahar}}</th>
-              <td>{{home.Mahallasi}}</td>
-              <td>{{home.Manzil}}</td>
-              <td>{{home.Ijarachi}}</td>
-              <td>{{home.Telefon}}</td>
-              <td>{{home.Yigit}}</td>
-              {% if home.Yigit == 'Yigit' %}
-              <td>{{ home.Yigit }}</td>
-              {% else %}
-              
-              <td>{{ home.Qiz }}</td>
-              {% endif %}
-              <td>{{home.Holati}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-          
-        </table>
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-              
-          {%  if page_obj.has_previous %}  
-              <li class="page-item">
-                  <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                  </a>
-              </li>   
-          {% endif %} 
-              {% for p in paginator.page_range %}
-               
-                  {% if page_obj.number == p %}
-                     <li class="page-item" style="color:red !important;">
-                          <a href="" class="page-link" style="color:red !important;">{{p}}</a>
-                     </li>
-                  {% elif p >= page_obj.number|add:-3 and p <= page_obj.number|add:3 %}
-                  <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
-                  {% endif %}                    
-              {% endfor %}
-              {%  if page_obj.has_next %}  
-                  <li class="page-item">
-                      <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                      <span class="sr-only">Next</span>
-                      </a>
-                  </li>
-              {% endif %}
-          </ul>
-        </nav>
-      
-      </div>
-    </div>
-    <!-- <div class="design_section layout_padding">
-      <div class="container">
-        <h1 class="solution_text">Wonderful marketing design</h1>
-        <div class="image_4"><img src="images/img-4.png"></div>
-        <p class="ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
-        <div class="make_bt"><a href="#">Make Now</a></div>
-      </div>
-    </div> -->
-    <!-- design section end --> 
-    <!-- contact section start -->
+	<head>
+		<title>Portfolio Fullscreen Slider | Tank - Creative Portfolio Showcase HTML Website Template by Themetorium</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Download Tank - Creative Portfolio Showcase HTML Website Template that comes with rich features and well-commented code. Made by Themetorium.">
+		<meta name="author" content="themetorium.net">
 
-    <!-- contact section end -->
-    <!-- footer section start -->
-    <div class="footer_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-sm-12">
-            <div class="footer_logo"><a href="{% url 'home_list' %}" style="font-size: 16px;"><img style="width: 50px;" src="{% static 'images/nspi.png' %}"> Navoiy davlat pedagogika instituti</a></div>
-            <h4 class="contact_text">Contact Us</h4>
-            <div class="call_section">
-              <div class="call_section_left">
-                <div class="map_icon"><img src="{% static 'images/map-icon.png' %}"></div>
-                <p class="location_text">Navoiy shahar</p>
-                <p class="location_text">Ibn Sino 45 uy</p>
-              </div>
-              <div class="call_section_middle">
-                <div class="map_icon"><img src="{% static 'images/mail-icon1.png' %}"></div>
-                <p class="location_text">info@nspi.uz</p>
-              </div>
-              <div class="call_section_right">
-                <div class="map_icon"><img src="{% static 'images/call-icon1.png' %}"></div>
-                <p class="location_text">+998 79 225-07-32</p>
-                <p class="location_text">+998 79 225-07-32</p>
-              </div>
-            </div>
-            <div class="social_icon">
-              <ul>
-                <li><a href="#"><img src="{% static 'images/fb-icon.png' %}"></a></li>
-                <li><a href="#"><img style="width: 50px; margin-top: -3px;" src="{% static 'images/telegram.png' %}"></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer section end -->
-    </div>
-    <!-- templet bg section end -->
-    <!-- copyright section start -->
-    <div class="copyright_section">
-      <div class="container">
-        <div class="copyright_text">2023 All Rights Reserved. Design by <a href="https://cipheredu.uz">CIPHER-EDU</a>
-          <span class="teams_text">Terms of Service        Privacy</span>
-        </div>
-      </div>
-    </div>
-    <!-- copyright section end -->
-    <!-- Javascript files-->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
-    <script src="{% static 'js/plugin.js' %}"></script>
-    <!-- sidebar -->
-    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
-    <script src="{% static 'js/custom.js' %}"></script>
-    <!-- javascript --> 
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>    
-</body>
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+		<!-- Google Analytics - Global site tag (gtag.js) -->
+		<!-- Paste your Google Anaytics code here. -->
+
+		<!-- Google fonts (https://www.google.com/fonts) -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> <!-- Body font -->
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet"> <!-- Secondary/Alter font -->
+
+		<!-- Libs and Plugins CSS -->
+		<link rel="stylesheet" href="{% static 'assets/vendor/normalize/normalize.min.css' %}"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
+		<link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/css/fontawesome-all.min.css' %}"> <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
+		<link rel="stylesheet" href="{% static 'assets/vendor/swiper/css/swiper-bundle.min.css' %}"> <!-- Swiper CSS (https://swiperjs.com/) -->
+		<link rel="stylesheet" href="{% static 'assets/vendor/lightgallery/css/lightgallery.min.css' %}"> <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+
+		<!-- Template master CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/helper.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+
+	</head>
+	<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+		<main id="body-inner">
+			<div id="page-transition">
+				<div class="ptr-overlay"></div>
+				<div class="ptr-preloader">
+					<div class="ptr-prel-content">
+						<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
+						<img src="{% static 'assets/img/logo-light.png' %}" class="ptr-prel-image tt-logo-light" alt="Logo">
+					</div> <!-- /.ptr-prel-content -->
+				</div> <!-- /.ptr-preloader -->
+			</div>
+			<div id="magic-cursor">
+				<div id="ball"></div>
+			</div>
+			<div class="bg-noise"></div>
+			<div id="scroll-container">
+				<header id="tt-header" class="tt-header-fixed">
+					<div class="tt-header-inner"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag!). Note: additionally you can use prepared helper class "max-width-*" to add custom width to "tt-wrap". Example: "max-width-1500" (class "tt-wrap" is still required!). More info about helper classes can be found in the file "helper.css". -->
+
+						<div class="tt-header-col">
+
+							<!-- Begin logo 
+							================ -->
+							<div class="tt-logo"> 
+								<a href="index.html">
+									<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
+									<img src="{% static 'assets/img/logo-light.png' %}" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
+									<img src="{% static 'assets/img/logo-dark.png' %}" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
+								</a>
+							</div>
+							<!-- End logo -->
+
+						</div> <!-- /.tt-header-col -->
+
+						<div class="tt-header-col">
+
+							<!-- Begin overlay menu toggle button -->
+							<div id="tt-ol-menu-toggle-btn-wrap">
+								<div class="tt-ol-menu-toggle-btn-text">
+									<span class="text-menu" data-hover="Open">Menu</span>
+									<span class="text-close">Close</span>
+								</div>
+								<div class="tt-ol-menu-toggle-btn-holder">
+									<a href="#" class="tt-ol-menu-toggle-btn magnetic-item"><span></span></a>
+								</div>
+							</div>
+							<!-- End overlay menu toggle button -->
+
+							<!-- Begin overlay menu 
+							======================== 
+							* Use class "tt-ol-menu-center" to align menu to center.
+							* Use class "tt-ol-menu-count" to enable menu counter.
+							-->
+							<nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count">
+								<div class="tt-ol-menu-holder">
+									<div class="tt-ol-menu-inner tt-wrap">
+										<div class="tt-ol-menu-content">
+
+											<!-- Begin menu list -->
+											<ul class="tt-ol-menu-list">
+
+												<!-- <li><a href="">Single Link</a></li> -->
+
+												<!-- Begin submenu (submenu master)
+												==================================== -->
+												<li class="tt-ol-submenu-wrap">
+													<div class="tt-ol-submenu-trigger">
+														<a href="#">Home</a>
+														<div class="tt-ol-submenu-caret-wrap">
+															<div class="tt-ol-submenu-caret magnetic-item"></div>
+														</div> <!-- /.tt-ol-submenu-caret-wrap -->
+													</div> <!-- /.tt-ol-submenu-trigger -->
+													<div class="tt-ol-submenu">
+														<ul class="tt-ol-submenu-list">
+
+															<li><a href="landing-page-1.html">Landing Page v.1</a></li>
+															<li><a href="landing-page-2.html">Landing Page v.2</a></li>
+
+														</ul> <!-- /.tt-ol-submenu-list -->
+													</div> <!-- /.tt-ol-submenu -->
+												</li>
+												<!-- End submenu (sub-master) -->
+
+												<!-- Begin submenu (submenu master)
+												==================================== -->
+												<li class="tt-ol-submenu-wrap active">
+													<div class="tt-ol-submenu-trigger">
+														<a href="#">Portfolio</a>
+														<div class="tt-ol-submenu-caret-wrap">
+															<div class="tt-ol-submenu-caret magnetic-item"></div>
+														</div> <!-- /.tt-ol-submenu-caret-wrap -->
+													</div> <!-- /.tt-ol-submenu-trigger -->
+													<div class="tt-ol-submenu">
+														<ul class="tt-ol-submenu-list">
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Portfolio List</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="portfolio-list-classic.html">List Classic</a></li>
+																		<li><a href="portfolio-list-overlay.html">List Overlay</a></li>
+																		<li><a href="portfolio-list-compact.html">List Compact</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Portfolio Grid</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="portfolio-grid-creative-1.html">Grid Creative v.1</a></li>
+																		<li><a href="portfolio-grid-creative-2.html">Grid Creative v.2</a></li>
+																		<li><a href="portfolio-grid-modern.html">Grid Modern</a></li>
+																		<li><a href="portfolio-grid-classic.html">Grid Classic</a></li>
+																		<li><a href="portfolio-grid-portrait-mode.html">Portrait Mode</a></li>
+																		<li><a href="portfolio-one-column.html">One Column</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap active">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Slider &amp; Carousel</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li class="active"><a href="portfolio-fullscreen-slider.html">Fullscreen Slider</a></li>
+																		<li><a href="portfolio-carousel-overlay.html">Carousel Overlay</a></li>
+																		<li><a href="portfolio-carousel-center.html">Carousel Center</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+															<li><a href="portfolio-interactive.html">Interactive</a></li>
+															<li><a href="portfolio-interactive-compact.html">Interactive Compact</a></li>
+															<li><a href="elements-classic-menu.html">Classic Menu</a></li>
+
+														</ul> <!-- /.tt-ol-submenu-list -->
+													</div> <!-- /.tt-ol-submenu -->
+												</li>
+												<!-- End submenu (sub-master) -->
+
+												<!-- Begin submenu (submenu master)
+												==================================== -->
+												<li class="tt-ol-submenu-wrap">
+													<div class="tt-ol-submenu-trigger">
+														<a href="#">About</a>
+														<div class="tt-ol-submenu-caret-wrap">
+															<div class="tt-ol-submenu-caret magnetic-item"></div>
+														</div> <!-- /.tt-ol-submenu-caret-wrap -->
+													</div> <!-- /.tt-ol-submenu-trigger -->
+													<div class="tt-ol-submenu">
+														<ul class="tt-ol-submenu-list">
+
+															<li><a href="about-us.html">About Us</a></li>
+															<li><a href="about-me.html">About Me</a></li>
+
+														</ul> <!-- /.tt-ol-submenu-list -->
+													</div> <!-- /.tt-ol-submenu -->
+												</li>
+												<!-- End submenu (sub-master) -->
+
+												<!-- Begin submenu (submenu master)
+												==================================== -->
+												<li class="tt-ol-submenu-wrap">
+													<div class="tt-ol-submenu-trigger">
+														<a href="#">Blog</a>
+														<div class="tt-ol-submenu-caret-wrap">
+															<div class="tt-ol-submenu-caret magnetic-item"></div>
+														</div> <!-- /.tt-ol-submenu-caret-wrap -->
+													</div> <!-- /.tt-ol-submenu-trigger -->
+													<div class="tt-ol-submenu">
+														<ul class="tt-ol-submenu-list">
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Blog List</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="blog-interactive.html">Interactive List</a></li>
+																		<li><a href="blog-list.html">Compact List</a></li>
+																		<li><a href="blog-classic.html">Classic List</a></li>
+																		<li><a href="blog-classic-sidebar.html">Classic Sidebar</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Blog Post</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="blog-post.html">Single Post</a></li>
+																		<li><a href="blog-post-classic-sidebar.html">Classic Sidebar</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+														</ul> <!-- /.tt-ol-submenu-list -->
+													</div> <!-- /.tt-ol-submenu -->
+												</li>
+												<!-- End submenu (sub-master) -->
+
+												<!-- Begin submenu (submenu master)
+												==================================== -->
+												<li class="tt-ol-submenu-wrap">
+													<div class="tt-ol-submenu-trigger">
+														<a href="#">Shop</a>
+														<div class="tt-ol-submenu-caret-wrap">
+															<div class="tt-ol-submenu-caret magnetic-item"></div>
+														</div> <!-- /.tt-ol-submenu-caret-wrap -->
+													</div> <!-- /.tt-ol-submenu-trigger -->
+													<div class="tt-ol-submenu">
+														<ul class="tt-ol-submenu-list">
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Product Lists</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="shop-list.html">Sliding Sidebar</a></li>
+																		<li><a href="shop-list-classic.html">Classic Sidebar</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Product Pages</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="shop-single.html">Product Page</a></li>
+																		<li><a href="shop-single-simple.html">Simple Product Page</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">Product Ordering</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="shop-cart.html">Shopping Cart</a></li>
+																		<li><a href="shop-checkout.html">Checkout</a></li>
+																		<li><a href="shop-order-details.html">Order Details</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+															<!-- Begin submenu
+															=================== -->
+															<li class="tt-ol-submenu-wrap">
+																<div class="tt-ol-submenu-trigger">
+																	<a href="#" class="tt-ol-submenu-link">More Pages</a>
+																	<div class="tt-ol-submenu-caret-wrap">
+																		<div class="tt-ol-submenu-caret magnetic-item"></div>
+																	</div> <!-- /.tt-ol-submenu-caret-wrap -->
+																</div> <!-- /.tt-ol-submenu-trigger -->
+																<div class="tt-ol-submenu">
+																	<ul class="tt-ol-submenu-list">
+
+																		<li><a href="shop-wishlist.html">Wishlist</a></li>
+																		<li><a href="shop-login.html">Login Page</a></li>
+																		<li><a href="shop-register.html">Register Account</a></li>
+																		<li><a href="shop-reset-password.html">Reset Password</a></li>
+																		
+																	</ul> <!-- /.tt-ol-submenu-list -->
+																</div> <!-- /.tt-ol-submenu -->
+															</li>
+															<!-- End submenu -->
+
+														</ul> <!-- /.tt-ol-submenu-list -->
+													</div> <!-- /.tt-ol-submenu -->
+												</li>
+												<!-- End submenu (sub-master) -->
+
+												<li><a href="contact.html">Contact</a></li>
+
+											</ul>
+											<!-- End menu list -->
+
+										</div> <!-- /.tt-ol-menu-content -->
+									</div> <!-- /.tt-ol-menu-inner -->
+								</div> <!-- /.tt-ol-menu-holder -->
+
+								<!-- Begin noise background -->
+								<div class="bg-noise"></div>
+								<!-- End noise background -->
+
+							</nav> 
+							<!-- End overlay menu -->
+
+						</div> <!-- /.header-col -->
+					</div> <!-- /.header-inner -->
+				</header>
+				<!-- End header -->
+
+				
+				<!-- *************************************
+				*********** Begin content wrap *********** 
+				************************************** -->
+				<div id="content-wrap">
+
+
+					<!-- *************************************
+					*********** Begin page content *********** 
+					************************************** -->
+					<div id="page-content">
+						<div class="tt-portfolio-slider cursor-drag-mouse-down" data-speed="1000" data-mousewheel="true" data-keyboard="true" data-simulate-touch="true" data-grab-cursor="true" data-pagination-type="fraction" data-parallax-mouse-move="true">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" data-url="{% url 'home_list' %}" data-title="TTJ 1" data-category="Navoiy davlat pedagogika instituti">
+										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="{% static 'images/ttj1.jpg' %}" data-src="{% static 'images/ttj1.jpg' %}" alt="Image">
+										</div> 
+									</div> 
+									<div class="swiper-slide" data-url="{% url 'home_list' %}" data-title="TTJ 2" data-category="Navoiy davlat pedagogika instituti">
+										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="{% static 'images/ttj2.jpg' %}" data-src="{% static 'images/ttj2.jpg' %}" alt="Image">
+										</div> <!-- /.tt-portfolio-slider-item -->
+									</div> 
+									<div class="swiper-slide" data-url="single-project-4.html" data-title="TTJ 3" data-category="Navoiy davlat pedagogika instituti">
+										<!-- Use class "cover-opacity-*" to set an image overlay if needed. For example "cover-opacity-2". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="{% static 'images/ttj3.jpg' %}" data-src="{% static 'images/ttj3.jpg' %}" alt="Image">
+										</div> <!-- /.tt-portfolio-slider-item -->
+									</div> 
+									<div class="swiper-slide" data-url="single-project-5.html" data-title="TTJ 4" data-category="Navoiy davlat pedagogika instituti">
+										<!-- Use class "cover-opacity-*" to set an image overlay if needed. For example "cover-opacity-2". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="{% static 'images/ttj4.jpg' %}" data-src="{% static 'images/ttj4.jpg' %}" alt="Image">
+										</div> 
+									<!-- </div> 
+									<div class="swiper-slide" data-url="single-project-6.html" data-title="Studio Shoot" data-category="People">
+										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="assets/img/low-qlt-thumb.jpg" data-src="assets/img/portfolio/portfolio-5.jpg" alt="Image">
+										</div> 
+									</div> 
+									<div class="swiper-slide" data-url="single-project-7.html" data-title="Breaking Wave" data-category="Nature">
+										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="assets/img/low-qlt-thumb.jpg" data-src="assets/img/portfolio/portfolio-6.jpg" alt="Image">
+										</div> 
+									</div> 
+									<div class="swiper-slide psi-image-is-light" data-url="single-project-8.html" data-title="Wall Lamp" data-category="Branding">
+										<div class="tt-portfolio-slider-item" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="assets/img/low-qlt-thumb.jpg" data-src="assets/img/portfolio/portfolio-7.jpg" alt="Image">
+										</div> 
+									</div> 
+									<div class="swiper-slide" data-url="single-project-9.html" data-title="Elegant Stoves" data-category="Creative">
+										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
+											<img class="tt-psi-image swiper-lazy" src="assets/img/low-qlt-thumb.jpg" data-src="assets/img/portfolio/portfolio-8.jpg" alt="Image">
+										</div> 
+									</div>  -->
+									<!-- End swiper slide -->
+
+								</div>
+								<!-- End swiper wrapper -->
+
+							</div>
+							<!-- End swiper container -->
+							
+
+							<!-- Begin portfolio slider caption
+							==================================== 
+							* Use class "psc-center" to align caption.
+							* Use class "psc-stroke" to enable caption title stroke style.
+							* Note: Titles and URLs are loaded from "swiper-slide" data attributes. Do not change them here!!!
+							-->
+							<div class="tt-portfolio-slider-caption psc-center">
+								<div class="tt-ps-caption-inner">
+									<h2 class="tt-psc-elem tt-ps-caption-title"><a href="" data-cursor="View<br>Project"></a></h2>
+									<div class="tt-psc-elem tt-ps-caption-category"></div>
+								</div> <!-- /.tt-ps-caption-inner -->
+							</div>
+							<!-- End portfolio slider caption -->
+
+							<!-- Begin portfolio slider navigation 
+							======================================= -->
+							<div class="tt-portfolio-slider-navigation tt-swiper-nav">
+								<div class="tt-ps-nav-prev">
+									<div class="tt-ps-nav-arrow tt-ps-nav-arrow-prev magnetic-item"></div>
+								</div>
+								<div class="tt-ps-nav-next">
+									<div class="tt-ps-nav-arrow tt-ps-nav-arrow-next magnetic-item"></div>
+								</div>
+								<div class="tt-ps-nav-pagination"></div>
+							</div>
+							<!-- End portfolio slider navigation -->
+
+						</div>
+						<!-- End portfolio slider -->
+
+					</div>
+					<!-- End page content -->
+					
+
+					<!-- ======================
+					///// Begin tt-footer /////
+					=========================== -->
+					<footer id="tt-footer" class="footer-absolute">
+						<div class="tt-footer-inner">
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center-left">
+								<div class="footer-col-inner">
+
+									<!-- You can use whatever button or link here -->
+									<div class="tt-btn tt-btn-link">
+										<a href="contact.html" data-hover="Get in Touch">Get in Touch</a>
+									</div>
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center-right">
+								<div class="footer-col-inner">
+
+									<div class="footer-social">
+										<div class="footer-social-text"><span>Follow</span><i class="fas fa-share-alt"></i></div>
+										<div class="social-buttons">
+											<ul>
+												<li><a href="https://www.facebook.com/themetorium" class="magnetic-item" target="_blank" rel="noopener">Fb.</a></li>
+												<li><a href="https://twitter.com/Themetorium" class="magnetic-item" target="_blank" rel="noopener">Tw.</a></li>
+												<li><a href="https://www.youtube.com/" class="magnetic-item" target="_blank" rel="noopener">Yt.</a></li>
+												<li><a href="https://dribbble.com/Themetorium" class="magnetic-item" target="_blank" rel="noopener">Dr.</a></li>
+												<li><a href="https://www.behance.net/Themetorium" class="magnetic-item" target="_blank" rel="noopener">Be.</a></li>
+											</ul>
+										</div> <!-- /.social-buttons -->
+									</div> <!-- /.footer-social -->
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+						</div> <!-- /.tt-section-inner -->
+					</footer>
+					<!-- End tt-footer -->
+
+
+				</div>
+				<!-- End content wrap -->
+
+			</div>
+			<!-- End scroll container -->
+
+
+		</main>
+		<!-- End body inner -->
+
+
+
+        
+
+		<!-- ====================
+		///// Scripts below /////
+		===================== -->
+
+		<!-- Core JS -->
+		<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script> <!-- jquery JS (https://jquery.com) -->
+
+		<!-- Libs and Plugins JS -->
+		<script src="{% static 'assets/vendor/gsap/gsap.min.js' %}"></script> <!-- GSAP JS (https://greensock.com/gsap/) -->
+		<script src="{% static 'assets/vendor/gsap/ScrollToPlugin.min.js' %}"></script> <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->
+		<script src="{% static 'assets/vendor/gsap/ScrollTrigger.min.js' %}"></script> <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->
+
+		<script src="{% static 'assets/vendor/smooth-scrollbar.js' %}"></script> <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->
+		<script src="{% static 'assets/vendor/swiper/js/swiper-bundle.min.js' %}"></script> <!-- Swiper JS (https://swiperjs.com/) -->
+		<script src="{% static 'assets/vendor/isotope/imagesloaded.pkgd.min.js' %}"></script> <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->
+		<script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
+		<script src="{% static 'assets/vendor/isotope/packery-mode.pkgd.min.js' %}"></script> <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->
+		<script src="{% static 'assets/vendor/lightgallery/js/lightgallery-all.min.js' %}"></script> <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
+		<script src="{% static 'assets/vendor/jquery.mousewheel.min.js' %}"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
+
+		<!-- Theme master JS -->
+		<script src="{% static 'assets/js/theme.js' %}"></script>
+
+
+
+	</body>
+
 </html>
