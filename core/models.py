@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.crypto import get_random_string
 import uuid
@@ -30,7 +31,7 @@ class Home(models.Model):
     
 
 class Ariza(models.Model):
-    unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    unique_id = models.UUIDField(default=uuid.uuid4, editable=False, )
     ism = models.CharField(max_length=15, verbose_name="Ismi",  null=False, unique=True)
     familiya = models.CharField(max_length=20, verbose_name='Familiyasi', null=False, )
     sharifi = models.CharField(max_length=20, verbose_name='Otasining ismi', null=False)
@@ -93,9 +94,18 @@ class Ariza(models.Model):
     
     unique_id = models.CharField(max_length=10, unique=True, editable=False,)
     comments = models.TextField(blank=True, verbose_name='Comments')
-    # is_approved = models.BooleanField(default=False, verbose_name='Is Approved')
+
+    def validate_unique_ism(self):
+        existing_record = Ariza.objects.filter(ism=self.ism).exclude(pk=self.pk).first()
+        if existing_record:
+            raise ValidationError("A record with this ism already exists.")
+
+    def clean(self):
+        self.validate_unique_ism()
+        super().clean()
 
     def save(self, *args, **kwargs):
+        self.validate_unique_ism()
         if not self.unique_id:
             self.unique_id = get_random_string(length=10)
         super().save(*args, **kwargs)
