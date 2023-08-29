@@ -121,32 +121,30 @@
 								<div class="tt-row">
 									<div class="tt-col-lg-5 padding-right-lg-5-p">
 										<div class="tt-heading tt-heading-lg margin-bottom-10-p anim-fadeinup">
-											<h3 class="tt-heading-subtitle text-gray">Get in Touch</h3>
-											<h2 class="tt-heading-title">Drop Us<br> A Line</h2>
+											<h3 class="tt-heading-subtitle text-gray">Navoiy davlat pedagogika instituti</h3>
+											<h2 class="tt-heading-title">Talablar turarjoy<br> Yotoqxonasi</h2>
 										</div>
 										<ul class="tt-contact-info padding-bottom-40 text-gray">
 											<li class="anim-fadeinup">
 												<span class="tt-ci-icon"><i class="fas fa-map-marker-alt"></i></span>
-												121 King Street, Melbourne, Australia
+												Navoiy shahar Ibn Sino 45uy 
 											</li>
 											<li class="anim-fadeinup">
 												<span class="tt-ci-icon"><i class="fas fa-phone"></i></span>
-												<a href="tel:+123456789000" class="tt-link">+(123) 456 789 000</a>
+												<a href="tel:+123456789000" class="tt-link">+998 79 225-07-32</a>
 											</li>
 											<li class="anim-fadeinup">
 												<span class="tt-ci-icon"><i class="fas fa-envelope"></i></span>
-												<a href="mailto:company@email.com" class="tt-link">company@email.com</a>
+												<a href="mailto:info@nspi.uz" class="tt-link">info@nspi.uz</a>
 											</li>
 											<li class="anim-fadeinup">
 												<h6 class="no-margin-bottom margin-top-40">Follow:</h6>
 												<!-- Begin social buttons -->
 												<div class="social-buttons">
 													<ul>
-														<li><a href="https://www.facebook.com/themetorium" class="magnetic-item" target="_blank" rel="noopener">Fb.</a></li>
-														<li><a href="https://twitter.com/Themetorium" class="magnetic-item" target="_blank" rel="noopener">Tw.</a></li>
-														<li><a href="https://www.youtube.com/" class="magnetic-item" target="_blank" rel="noopener">Yt.</a></li>
-														<li><a href="https://dribbble.com/Themetorium" class="magnetic-item" target="_blank" rel="noopener">Dr.</a></li>
-														<li><a href="https://www.behance.net/Themetorium" class="magnetic-item" target="_blank" rel="noopener">Be.</a></li>
+														<li><a href="https://t.me/NavDPI_Rasmiy" class="magnetic-item" target="_blank" rel="noopener">Tg.</a></li>
+														<li><a href="https://www.instagram.com/navdpi_edu/" class="magnetic-item" target="_blank" rel="noopener">Ins.</a></li>
+														<li><a href="https://www.youtube.com/@navoiynavdpi5460" class="magnetic-item" target="_blank" rel="noopener">Yt.</a></li>
 													</ul>
 												</div>
 												<!-- End social buttons -->
@@ -175,47 +173,147 @@
 												<div class="tt-col-md-6">
 
 													<div class="tt-form-group">
-														<label>Name <span class="required">*</span></label>
-														<input class="tt-form-control" type="text" name="Name" placeholder="" required>
+														<label>Ismingiz <span class="required">*</span></label>
+														{{ form.ismi }}
 													</div>
 
-												</div> <!-- /.tt-col -->
-
+												</div> 
 												<div class="tt-col-md-6">
 
 													<div class="tt-form-group">
-														<label>Email address <span class="required">*</span></label>
-														<input class="tt-form-control" type="email" name="Email" placeholder="" required>
+														<label>Familiyangiz<span class="required">*</span></label>
+														{{ form.familiya }}
+													</div>
+												</div> 
+											</div> 
+											<div class="tt-row">
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Otangizni ismi <span class="required">*</span></label>
+														{{ form.sharifi }}
 													</div>
 
-												</div> <!-- /.tt-col -->
-											</div> <!-- /.tt-row -->
+												</div> 
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Mamlakatingiz <span class="required">*</span></label>
+														{{ form.mamlakat }}
+													</div>
+												</div> 
+											</div> 
+											<div class="tt-row">
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Viloyatingiz <span class="required">*</span></label>
+														{{ form.viloyat }}
+													</div>
+
+												</div> 
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Tumaningiz <span class="required">*</span></label>
+														{{ form.tuman }}
+													</div>
+												</div> 
+											</div> 
+											<div class="tt-row">
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Jinsizngiz<span class="required">*</span></label>
+														{{ form.jinsi }}
+													</div>
+
+												</div> 
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Pasport seriya <span style="font-size: 10px;" class="required">Pasportning ikki bosh harflari</span></label>
+														{{ form.pasport }}
+													</div>
+												</div> 
+											</div> 
+											<div class="tt-row">
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Pasport raqami<span style="font-size: 10px;" class="required"> 7 sondan oshmasin</span></label>
+														{{ form.pasport_num }}
+													</div>
+
+												</div> 
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Manzilingiz <span  class="required">*</span></label>
+														{{ form.manzil }}
+													</div>
+												</div> 
+											</div> 
+											<div class="tt-row">
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Fakultetingiz <span class="required">*</span></label>
+														{{ form.fakultet }}
+													</div>
+
+												</div> 
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Yo'nalishingiz <span class="required">*</span></label>
+														{{ form.yunalish }}
+													</div>
+												</div> 
+											</div> 
+											<div class="tt-row">
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Gruxingiz <span class="required">*</span></label>
+														{{ form.grux }}
+													</div>
+
+												</div> 
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Kursingiz <span class="required">*</span></label>
+														{{ form.kurs }}
+													</div>
+												</div> 
+											</div> 
+											<div class="tt-row">
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Telefon raqamingiz <span class="required">*</span></label>
+														{{ form.telefon }}
+													</div>
+
+												</div> 
+												<div class="tt-col-md-6">
+
+													<div class="tt-form-group">
+														<label>Ariza suratini yuklang <span class="required">max 2mb</span></label>
+														{{ form.uploaded_file }}
+													</div>
+												</div> 
+											</div> 
+
 
 											<div class="tt-form-group">
-												<label>Subject <span class="required">*</span></label>
-												<input class="tt-form-control" type="text" name="Subject" placeholder="" required>
+												<label>Qo'shimcha fikringiz <span class="required">*</span></label>
+												{{form.coment}}
 											</div>
-
-											<div class="tt-form-group">
-												<label>Select an option <span class="required">*</span></label>
-												<select class="tt-form-control" name="option" required>
-													<option value="" disabled selected>Please choose an option</option>
-													<option value="Say Hello">Say hello</option>
-													<option value="New Project">New project</option>
-													<option value="Feedback">Feedback</option>
-													<option value="Other">Other</option>
-												</select>
-											</div>
-
-											<div class="tt-form-group">
-												<label>Message <span class="required">*</span></label>
-												<textarea class="tt-form-control" rows="6" name="Message" placeholder="" required></textarea>
-											</div>
-
-											<small class="tt-form-text"><em>Fields marked with an asterisk (*) are required!</em></small>
-
+											<small class="tt-form-text"><em>Barcha qaotrlarni to'g'ri to'ldirganingizga ishonch hosil qiling!</em></small>
 											<div class="tt-btn tt-btn-light-outline margin-top-40">
-												<button type="submit" data-hover="Send Message">Send Message</button>
+												<button type="submit" data-hover="Send Message">Yuborish</button>
 											</div>
 										</form>
 										<!-- End form -->
@@ -243,13 +341,13 @@
 								-->
 								<div class="tt-page-nav tt-pn-scroll">
 									<a href="portfolio-grid-modern.html" class="tt-pn-link anim-fadeinup">
-										<div class="tt-pn-title">Portfolio</div>
-										<div class="tt-pn-hover-title">Portfolio</div>
+										<div class="tt-pn-title">Ariza holati</div>
+										<div class="tt-pn-hover-title">Ariza holati</div>
 									</a> <!-- /.tt-pn-link -->
 
 									<div class="tt-pn-subtitle anim-fadeinup">Selected Works</div>
 									<div class="tt-pn-image">
-										<img src="assets/img/page-header/ph-1.jpg" alt="image">
+										<img src="{% static 'images/nspi.png' %}" alt="image">
 									</div>
 								</div>
 							</div> 

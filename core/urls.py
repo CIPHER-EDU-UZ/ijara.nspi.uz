@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 
 from .views import *
 
@@ -11,3 +11,6 @@ urlpatterns = [
     path('test/', test, name='test'),
     path('upload/', upload_excel, name='upload_excel'),
 ]
+
+
+handler404 = 'core.views.custom_404_view'

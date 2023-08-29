@@ -11,6 +11,14 @@ from django.views import View
 from django.contrib import messages
 import uuid
 
+def custom_404_view(request, exception):
+    return render(request, '404.html', status=404)
+
+
+def error_500(request):
+        data = {}
+        return render(request,'myapp/error_500.html', data)
+
 def upload_excel(request):
     if request.method == 'POST':
         excel_file = request.FILES.get('excel_file')
