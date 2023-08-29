@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ---------------------------------------------------------------------------------------
 * Template Helper CSS
 * 
@@ -7,6 +8,40 @@
 *
 * 
 --------------------------------------------------------------------------------------- */
+=======
+/* --------------------------------------------------------------------
+* Template Shop Stylesheet
+* 
+* Template:		Tank - Creative Portfolio Showcase HTML Website Template
+* Author:		Themetorium
+* URL:			https://themetorium.net/
+*
+-------------------------------------------------------------------- */
+
+
+/* Table of Content
+====================
+* Custom scrollbar style
+* Shop grid (product list)
+* Shop tt-Product
+* Shop single product
+* Shop tt-Product carousel
+* Shop sidebar filter widgets
+* Shop sliding cart
+* Shop shopping cart (page)
+* Shop checkout
+* Shop order details (thank you page)
+* Shop wishlist
+* Shop login/register/reset password
+*/ 
+
+
+
+/* ------------------------------------------------------------- *
+ * Shop grid (product list)
+/* ------------------------------------------------------------- */
+
+>>>>>>> 5d49db5538076dcf2fb75ac44b06ded157469833
 #shop-grid {
 	position: relative;
 }
