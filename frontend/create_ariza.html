@@ -5,19 +5,15 @@
 		<title>Ijara NSPI | Created by CIPHER-EDU</title>
 		<meta charset="utf-8">
 		<meta name="description" content="ijara.nspi.uz">
-		<meta name="author" content="themetorium.net">
+		<meta name="author" content="ijara.nspi.uz">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> <!-- Body font -->
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet"> <!-- Secondary/Alter font -->
-
-		<!-- Libs and Plugins CSS -->
-		<link rel="stylesheet" href="{% static 'assets/vendor/normalize/normalize.min.css' %}"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
-		<link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/css/fontawesome-all.min.css' %}"> <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
-		<link rel="stylesheet" href="{% static 'assets/vendor/swiper/css/swiper-bundle.min.css' %}"> <!-- Swiper CSS (https://swiperjs.com/) -->
-		<link rel="stylesheet" href="{% static 'assets/vendor/lightgallery/css/lightgallery.min.css' %}"> <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
-
-		<!-- Template master CSS -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'assets/vendor/normalize/normalize.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/css/fontawesome-all.min.css' %}"> 
+		<link rel="stylesheet" href="{% static 'assets/vendor/swiper/css/swiper-bundle.min.css' %}"> 
+		<link rel="stylesheet" href="{% static 'assets/vendor/lightgallery/css/lightgallery.min.css' %}">
 		<link rel="stylesheet" href="{% static 'assets/css/helper.css' %}">
 		<link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
 
@@ -42,7 +38,7 @@
 
 						<div class="tt-header-col">
 							<div class="tt-logo"> 
-								<a href="{% url 'home_list' %}">
+								<a href="{% url 'home' %}">
 									<img src="{% static 'images/nspi.png' %}" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
 									<img src="{% static 'images/nspi.png' %}" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
 								</a>
@@ -67,7 +63,7 @@
 											<ul class="tt-ol-menu-list">
 												<li class="tt-ol-submenu-wrap">
 													<div class="tt-ol-submenu-trigger">
-														<a href="{% url 'home_list' %}">Bosh sahifa</a>
+														<a href="{% url 'home' %}">Bosh sahifa</a>
 													</div> 
 												</li>
 												<li><a href="{% url 'create_ariza' %}">Ariza berish</a></li>
@@ -139,7 +135,6 @@
 											</li>
 											<li class="anim-fadeinup">
 												<h6 class="no-margin-bottom margin-top-40">Follow:</h6>
-												<!-- Begin social buttons -->
 												<div class="social-buttons">
 													<ul>
 														<li><a href="https://t.me/NavDPI_Rasmiy" class="magnetic-item" target="_blank" rel="noopener">Tg.</a></li>
@@ -147,34 +142,18 @@
 														<li><a href="https://www.youtube.com/@navoiynavdpi5460" class="magnetic-item" target="_blank" rel="noopener">Yt.</a></li>
 													</ul>
 												</div>
-												<!-- End social buttons -->
 											</li>
 										</ul>
-										<!-- End contact info -->
-
-									</div> <!-- /.tt-col -->
-
+									</div>
 									<div class="tt-col-lg-7">
-
-										<!-- Begin form 
-										================ 
-										* Use class "tt-form-filled" or "tt-form-minimal" to change form style.
-										* Use class "tt-form-sm" or "tt-form-lg" to change form size (no class = default size).
-										-->
-										<form id="tt-contact-form" class="tt-form-minimal anim-fadeinup">
-
-											<!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
-											<input type="hidden" name="project_name" value="yourwebsiteaddress.com"> <!-- Change value to your site name -->
-											<input type="hidden" name="admin_email" value="your@email.com"> <!-- Change value to your valid email address (where a message will be sent) -->
-											<input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com"> <!-- Change value to your own message subject -->
-											<!-- End Hidden Required Fields -->
-
+										<form method="post" enctype="multipart/form-data" class="tt-form-minimal anim-fadeinup">
+											{% csrf_token %}
 											<div class="tt-row">
 												<div class="tt-col-md-6">
 
 													<div class="tt-form-group">
 														<label>Ismingiz <span class="required">*</span></label>
-														{{ form.ismi }}
+														{{ form.ism }}
 													</div>
 
 												</div> 
@@ -295,56 +274,32 @@
 														<label>Telefon raqamingiz <span class="required">*</span></label>
 														{{ form.telefon }}
 													</div>
-
-												</div> 
-												<div class="tt-col-md-6">
-
-													<div class="tt-form-group">
-														<label>Ariza suratini yuklang <span class="required">max 2mb</span></label>
-														{{ form.uploaded_file }}
-													</div>
 												</div> 
 											</div> 
-
-
-											<div class="tt-form-group">
-												<label>Qo'shimcha fikringiz <span class="required">*</span></label>
-												{{form.coment}}
-											</div>
+											
 											<small class="tt-form-text"><em>Barcha qaotrlarni to'g'ri to'ldirganingizga ishonch hosil qiling!</em></small>
 											<div class="tt-btn tt-btn-light-outline margin-top-40">
 												<button type="submit" data-hover="Send Message">Yuborish</button>
 											</div>
 										</form>
-										<!-- End form -->
-
-									</div> <!-- /.tt-col -->
-								</div> <!-- /.tt-row -->
-
-							</div> <!-- /.tt-section-inner -->
+										{% if messages %}
+											{% for message in messages %}
+												<div class="alert alert-{{ message.tags }}" role="alert">
+												{{ message }}
+												</div>
+											{% endfor %}
+										{% endif %}
+									</div>
+								</div>
+							</div> 
 						</div>
-						<!-- End tt-section -->
-
-
-						<!-- =======================
-						///// Begin tt-section /////
-						============================ 
-						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-						-->
 						<div class="tt-section padding-bottom-xlg-150">
 							<div class="tt-section-inner tt-wrap">
-
-								<!-- Begin page nav 
-								==================== 
-								* Use class "tt-pn-stroke" to enable title stroke style.
-								* Use class "tt-pn-scroll" to enable hover title scroll. Note: If "tt-pn-hover-title" text is wider than "tt-pn-link" then it scrolls by default. The longer the text, the faster it scrolls.
-								-->
 								<div class="tt-page-nav tt-pn-scroll">
 									<a href="portfolio-grid-modern.html" class="tt-pn-link anim-fadeinup">
 										<div class="tt-pn-title">Ariza holati</div>
 										<div class="tt-pn-hover-title">Ariza holati</div>
-									</a> <!-- /.tt-pn-link -->
-
+									</a>
 									<div class="tt-pn-subtitle anim-fadeinup">Selected Works</div>
 									<div class="tt-pn-image">
 										<img src="{% static 'images/nspi.png' %}" alt="image">
@@ -353,26 +308,17 @@
 							</div> 
 						</div>
 					</div>
-		<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script> <!-- jquery JS (https://jquery.com) -->
-
-		<!-- Libs and Plugins JS -->
-		<script src="{% static 'assets/vendor/gsap/gsap.min.js' %}"></script> <!-- GSAP JS (https://greensock.com/gsap/) -->
-		<script src="{% static 'assets/vendor/gsap/ScrollToPlugin.min.js' %}"></script> <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->
-		<script src="{% static 'assets/vendor/gsap/ScrollTrigger.min.js' %}"></script> <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->
-
-		<script src="{% static 'assets/vendor/smooth-scrollbar.js' %}"></script> <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->
-		<script src="{% static 'assets/vendor/swiper/js/swiper-bundle.min.js' %}"></script> <!-- Swiper JS (https://swiperjs.com/) -->
-		<script src="{% static 'assets/vendor/isotope/imagesloaded.pkgd.min.js' %}"></script> <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->
-		<script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
-		<script src="{% static 'assets/vendor/isotope/packery-mode.pkgd.min.js' %}"></script> <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->
-		<script src="{% static 'assets/vendor/lightgallery/js/lightgallery-all.min.js' %}"></script> <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
-		<script src="{% static 'assets/vendor/jquery.mousewheel.min.js' %}"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
-
-		<!-- Theme master JS -->
+		<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script> 
+		<script src="{% static 'assets/vendor/gsap/gsap.min.js' %}"></script> 
+		<script src="{% static 'assets/vendor/gsap/ScrollToPlugin.min.js' %}"></script> 
+		<script src="{% static 'assets/vendor/gsap/ScrollTrigger.min.js' %}"></script>
+		<script src="{% static 'assets/vendor/smooth-scrollbar.js' %}"></script> 
+		<script src="{% static 'assets/vendor/swiper/js/swiper-bundle.min.js' %}"></script> 
+		<script src="{% static 'assets/vendor/isotope/imagesloaded.pkgd.min.js' %}"></script>
+		<script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'assets/vendor/isotope/packery-mode.pkgd.min.js' %}"></script> 
+		<script src="{% static 'assets/vendor/lightgallery/js/lightgallery-all.min.js' %}"></script>
+		<script src="{% static 'assets/vendor/jquery.mousewheel.min.js' %}"></script>
 		<script src="{% static 'assets/js/theme.js' %}"></script>
-
-
-
 	</body>
-
 </html>

@@ -37,7 +37,7 @@
 
 						<div class="tt-header-col">
 							<div class="tt-logo"> 
-								<a href="{% url 'home_list' %}">
+								<a href="{% url 'home' %}">
 									<img src="{% static 'images/nspi.png' %}" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
 									<img src="{% static 'images/nspi.png' %}" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
 								</a>
@@ -60,10 +60,13 @@
 											<ul class="tt-ol-menu-list">
 												<li class="tt-ol-submenu-wrap">
 													<div class="tt-ol-submenu-trigger">
-														<a href="{% url 'home_list' %}">Bosh sahifa</a>
+														<a href="{% url 'home' %}">Bosh sahifa</a>
 													</div> 
 												</li>
 												<li><a href="{% url 'create_ariza' %}">Ariza berish</a></li>
+												<li>
+													<a href="{% url 'check_status' %}">Ariza holatini tekshirish</a>
+												</li>
 											</ul>
 										</div> 
 									</div>
@@ -78,12 +81,12 @@
 						<div class="tt-portfolio-slider cursor-drag-mouse-down" data-speed="1000" data-mousewheel="true" data-keyboard="true" data-simulate-touch="true" data-grab-cursor="true" data-pagination-type="fraction" data-parallax-mouse-move="true">
 							<div class="swiper">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide" data-url="{% url 'home_list' %}" data-title="TTJ 1" data-category="Navoiy davlat pedagogika instituti">
+									<div class="swiper-slide" data-url="{% url 'home' %}" data-title="TTJ 1" data-category="Navoiy davlat pedagogika instituti">
 										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
 											<img class="tt-psi-image swiper-lazy" src="{% static 'images/ttj1.jpg' %}" data-src="{% static 'images/ttj1.jpg' %}" alt="Image">
 										</div> 
 									</div> 
-									<div class="swiper-slide" data-url="{% url 'home_list' %}" data-title="TTJ 2" data-category="Navoiy davlat pedagogika instituti">
+									<div class="swiper-slide" data-url="{% url 'home' %}" data-title="TTJ 2" data-category="Navoiy davlat pedagogika instituti">
 										<div class="tt-portfolio-slider-item cover-opacity-3" data-swiper-parallax="50%">
 											<img class="tt-psi-image swiper-lazy" src="{% static 'images/ttj2.jpg' %}" data-src="{% static 'images/ttj2.jpg' %}" alt="Image">
 										</div> 
@@ -121,7 +124,7 @@
 							<div class="footer-col tt-align-center-left">
 								<div class="footer-col-inner">
 									<div class="tt-btn tt-btn-link">
-										<a href="contact.html" data-hover="Get in Touch">Get in Touch</a>
+										<a href="{% url 'create_ariza' %}" data-hover="Ariza yuborish">Ariza berish</a>
 									</div>
 								</div>
 							</div>

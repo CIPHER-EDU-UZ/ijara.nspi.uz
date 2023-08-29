@@ -63,6 +63,5 @@ class ArizaAdmin(admin.ModelAdmin):
                     'yunalish',
                     'grux',
                     'kurs',
-                    'telefon',
-                    'uploaded_file', )
+                    'telefon', )
 admin.site.register(Ariza,ArizaAdmin)

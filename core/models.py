@@ -66,8 +66,8 @@ class Ariza(models.Model):
         ('ayol', 'Ayol'),
     ]
     jinsi = models.CharField(max_length=15, choices=jinsi_choice, verbose_name='Jinsini tanlang', null=False)
-    pasport = models.CharField(max_length=2, verbose_name="pasport seriya", unique=True)
-    pasport_num = models.IntegerField(verbose_name="Pasport raqami", unique=True)
+    pasport = models.CharField(max_length=2, verbose_name="pasport seriya",)
+    pasport_num = models.IntegerField(verbose_name="Pasport raqami", )
     manzil = models.CharField(max_length=150, verbose_name='Yashash manzili')
     fakulte_choices = [
         ('matematika va informatika', 'Matematika va Informatika'),
@@ -89,8 +89,8 @@ class Ariza(models.Model):
         ('4kurs', '4 Kurs'),
     ]
     kurs = models.CharField(max_length=15, choices=kurs_choice, verbose_name='kursni tanlang', null=False)
-    telefon = models.IntegerField(verbose_name='Telefon raqam', unique=True)
-    uploaded_file = models.FileField(upload_to='xujjatlar/')
+    telefon = models.IntegerField(verbose_name='Telefon raqam',)
+    # uploaded_file = models.FileField(upload_to='xujjatlar/')
     
     unique_id = models.CharField(max_length=10, unique=True, editable=False,)
     comments = models.TextField(blank=True, verbose_name='Comments')

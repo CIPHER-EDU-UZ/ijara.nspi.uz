@@ -45,7 +45,7 @@ class ArizaForm(forms.ModelForm):
             'grux': forms.TextInput(attrs={'class': 'tt-form-control'}),
             'kurs': forms.Select(attrs={'class': 'tt-form-control'}),
             'telefon': forms.NumberInput(attrs={'class': 'tt-form-control'}),
-            'uploaded_file': forms.FileInput(attrs={'class': 'tt-form-control'}),
-            'coment': forms.FileInput(attrs={'class': 'tt-form-control'}),
+            # 'uploaded_file': forms.FileInput(attrs={'class': 'tt-form-control'}),
+            'comments': forms.TextInput(attrs={'class': 'tt-form-control'}),
         }
 
