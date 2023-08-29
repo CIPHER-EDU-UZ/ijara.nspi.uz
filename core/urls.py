@@ -9,6 +9,7 @@ urlpatterns = [
     path('approve/<slug:unique_id>/', approve_ariza, name='approve_ariza'),
     path('check_status/', check_status, name='check_status'),
     path('test/', test, name='test'),
+    path('search/', search_application, name='search_application'),
     path('upload/', upload_excel, name='upload_excel'),
 ]
 

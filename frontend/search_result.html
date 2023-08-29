@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ijara NSPI | Created by CIPHER-EDU</title>
+		<meta charset="utf-8">
+		<meta name="description" content="ijara.nspi.uz">
+		<meta name="author" content="ijara.nspi.uz">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'assets/vendor/normalize/normalize.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/css/fontawesome-all.min.css' %}"> 
+		<link rel="stylesheet" href="{% static 'assets/vendor/swiper/css/swiper-bundle.min.css' %}"> 
+		<link rel="stylesheet" href="{% static 'assets/vendor/lightgallery/css/lightgallery.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/helper.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/shop.css' %}"> 
+
+	</head>
+	<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+		<main id="body-inner">
+			<div id="page-transition">
+				<div class="ptr-overlay"></div>
+				<div class="ptr-preloader">
+					<div class="ptr-prel-content">
+						<img src="{% static 'images/nspi.png' %}" class="ptr-prel-image tt-logo-light" alt="Logo">
+					</div> 
+				</div> 
+			</div>
+			<div id="magic-cursor">
+				<div id="ball"></div>
+			</div>
+			<div class="bg-noise"></div>
+			<div id="scroll-container">
+				<header id="tt-header" class="tt-header-fixed">
+					<div class="tt-header-inner">
+
+						<div class="tt-header-col">
+							<div class="tt-logo"> 
+								<a href="{% url 'home' %}">
+									<img src="{% static 'images/nspi.png' %}" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
+									<img src="{% static 'images/nspi.png' %}" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
+								</a>
+							</div>
+
+						</div>
+
+						<div class="tt-header-col">
+							<div id="tt-ol-menu-toggle-btn-wrap">
+								<div class="tt-ol-menu-toggle-btn-text">
+									<span class="text-menu" data-hover="Open">Menu</span>
+									<span class="text-close">Close</span>
+								</div>
+								<div class="tt-ol-menu-toggle-btn-holder">
+									<a href="#" class="tt-ol-menu-toggle-btn magnetic-item"><span></span></a>
+								</div>
+							</div>
+							<nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count">
+								<div class="tt-ol-menu-holder">
+									<div class="tt-ol-menu-inner tt-wrap">
+										<div class="tt-ol-menu-content">
+											<ul class="tt-ol-menu-list">
+												<li class="tt-ol-submenu-wrap">
+													<div class="tt-ol-submenu-trigger">
+														<a href="{% url 'home' %}">Bosh sahifa</a>
+													</div> 
+												</li>
+												<li>
+                                                    <a href="{% url 'create_ariza' %}">Ariza berish</a>
+                                                </li>
+                                                <li>
+													<a href="{% url 'search_application' %}">Ariza holatini tekshirish</a>
+												</li>
+											</ul>
+										</div> 
+									</div> 
+								</div> 
+								<div class="bg-noise"></div>
+							</nav>
+						</div> 
+					</div> 
+				</header>
+        <br><br><br><br>
+                <center>
+                    <div class="shop-order-details tt-col-lg-7">
+                        <h4 class="shop-order-details-heading">Ariza holati</h4>
+            
+                        <!-- Begin table -->
+                        <table class="shop-order-details-table">
+                            <thead>
+                                <tr>
+                                    <th>Arizachi</th>
+                                    {% if ariza %}
+                                    <th>{{ ariza.ism }} {{ariza.familiya}}</th>
+
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <!-- Begin product -->
+                                        <div class="sod-product">
+                                            <p class="sod-product-title">Ariza ID raqami</p>
+                                            <div class="sod-product-variations">
+                                                <div class="sodp-variation">ID raqam <span>sizga  ariza yuborgan paytingizda taqdim etilgan</span></div>
+                                            </div> 
+                                        </div> 
+                                    </td>
+                                    <td>
+                                        <bdi style="color: greenyellow;">{{ ariza.unique_id }}</bdi>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="sod-product">
+                                            <p class="sod-product-title">Ariza holati</p>
+                                        </div> 
+                                    </td>
+                                    <td>
+                                        {% if ariza.approved %}
+                                            <bdi> <span style="color: greenyellow;"> Tasdiqlangan </span></bdi>
+                                            <bdi>{% else %} <span  style="color: red;">Ariza tasdiqlanmagan</span></bdi>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% else %}
+                                {% endif %}
+                        </table>            
+                    </div>
+                </center>
+            </div>
+        </main>
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>	
+    <script src="{% static 'assets/vendor/gsap/gsap.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/gsap/ScrollToPlugin.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/gsap/ScrollTrigger.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/smooth-scrollbar.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope/imagesloaded.pkgd.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope/packery-mode.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/lightgallery/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery.mousewheel.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+</body>
+</html>

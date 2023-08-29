@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Detail</title>
+    <title>Ariza Detail</title>
 </head>
 <body>
-    <h1>Application Detail</h1>
-    <p><strong>ID Number:</strong> {{ ariza.pk }}</p>
-    <p><strong>Name:</strong> {{ ariza.ism }}</p>
-    <p><strong>Family Name:</strong> {{ ariza.familiya }}</p>
-    <!-- Display other fields as needed -->
-
-    {% if ariza.approved %}
-        <p><strong>Status:</strong> Approved</p>
-        <p><strong>Additional Comment:</strong> {{ ariza.additional_comment }}</p>
-    {% else %}
-        <p><strong>Status:</strong> Not Approved</p>
-    {% endif %}
+    <h1>Ariza Detail</h1>
+    <p>Unique ID: {{ ariza.unique_id }}</p>
+    <p>Status: {% if ariza.approved %}Approved{% else %}Not Approved{% endif %}</p>
     
+    <p>{{ ariza.ism }}</p>
+    <p>{{ ariza.familiya }}</p>
+    <!-- ... other fields ... -->
 </body>
 </html>

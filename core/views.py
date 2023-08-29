@@ -61,7 +61,7 @@ def upload_excel(request):
 
 
 class HomeListView(ListView):
-    paginate_by = 15
+    # paginate_by = 15
     template_name = 'index.html'
     model = Ariza
     context_object_name = 'ijara'
@@ -135,6 +135,7 @@ def create_ariza(request):
     context = {'form': form}
     return render(request, 'create_ariza.html', context)
 
+#brak kod
 def check_status(request):
     if request.method == 'POST':
         unique_id = request.POST.get('unique_id')
@@ -148,6 +149,21 @@ def check_status(request):
             return render(request, 'home.html', context)
     else:
         return redirect('home')
+#brak kode
+
+def search_application(request):
+    if request.method == 'POST':
+        unique_id = request.POST.get('unique_id')
+        try:
+            ariza = Ariza.objects.get(unique_id=unique_id)
+            context = {'ariza': ariza}
+            return render(request, 'search_result.html', context)
+        except Ariza.DoesNotExist:
+            message = f'Application with ID {unique_id} not found.'
+            context = {'message': message}
+            return render(request, 'search_result.html', context)
+    else:
+        return render(request, 'search_form.html')
 
 def approve_ariza(request, unique_id):
     ariza = Ariza.objects.get(unique_id=unique_id)
