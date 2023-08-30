@@ -1,0 +1,430 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ijara NSPI | Created by CIPHER-EDU</title>
+		<meta charset="utf-8">
+		<meta name="description" content="ijara.nspi.uz">
+		<meta name="author" content="themetorium.net">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="{% static 'assets/vendor/normalize/normalize.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/css/fontawesome-all.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/swiper/css/swiper-bundle.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/vendor/lightgallery/css/lightgallery.min.css' %}"> 
+		<link rel="stylesheet" href="{% static 'assets/css/helper.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+	</head>
+<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+    <main id="body-inner">
+        <div id="page-transition">
+            <div class="ptr-overlay"></div>
+            <div class="ptr-preloader">
+                <div class="ptr-prel-content">
+                    <img src="{% static 'images/nspi.png' %}" class="ptr-prel-image tt-logo-light" alt="Logo">
+                </div> 
+            </div> 
+        </div>
+        <div id="magic-cursor">
+            <div id="ball"></div>
+        </div>
+        <div class="bg-noise"></div>
+        <div id="scroll-container">
+            <header id="tt-header" class="tt-header-fixed">
+                <div class="tt-header-inner">
+
+                    <div class="tt-header-col">
+                        <div class="tt-logo"> 
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'images/nspi.png' %}" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
+                                <img src="{% static 'images/nspi.png' %}" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tt-header-col">
+                        <div id="tt-ol-menu-toggle-btn-wrap">
+                            <div class="tt-ol-menu-toggle-btn-text">
+                                <span class="text-menu" data-hover="Open">Menu</span>
+                                <span class="text-close">Close</span>
+                            </div>
+                            <div class="tt-ol-menu-toggle-btn-holder">
+                                <a href="#" class="tt-ol-menu-toggle-btn magnetic-item"><span></span></a>
+                            </div>
+                        </div>
+                        <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count">
+                            <div class="tt-ol-menu-holder">
+                                <div class="tt-ol-menu-inner tt-wrap">
+                                    <div class="tt-ol-menu-content">
+                                        <ul class="tt-ol-menu-list">
+                                            <li class="tt-ol-submenu-wrap">
+                                                <div class="tt-ol-submenu-trigger">
+                                                    <a href="{% url 'home' %}">Bosh sahifa</a>
+                                                </div> 
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'about' %}">
+                                                    Yotoqxona qaqida
+                                                </a>
+                                            </li>
+                                            <li><a href="{% url 'create_ariza' %}">Ariza berish</a></li>
+                                            <li>
+                                                <a href="{% url 'search_application' %}">Ariza holatini tekshirish</a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    Xodimlar uchun
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div> 
+                            <div class="bg-noise"></div>
+                        </nav> 
+                    </div> 
+                </div> 
+            </header>
+            <div id="content-wrap">
+                <div id="page-header" class="ph-full ph-cap-xxlg ph-center ph-image-cropped ph-image-cover-4 ph-content-parallax">
+                    <div class="page-header-inner tt-wrap">
+                        <div class="ph-image">
+                            <div class="ph-image-inner">
+                                <img src="{% static 'images/nspi.png'  %}" alt="Image">
+                            </div>
+                        </div>
+                        <div class="ph-caption">
+                            <h1 class="ph-caption-title ph-appear">Biz haqimizda</h1>
+                            <div class="ph-caption-title-ghost ph-appear">About</div>
+                            <div class="ph-caption-subtitle ph-appear">Navoiy davlat pedagogika instituti </div>
+                        </div> 
+                    </div>
+                    <a href="#page-content" class="scroll-down-circle" data-offset="30">
+                        <div class="sdc-inner ph-appear">
+                            <div class="sdc-icon"><i class="fas fa-chevron-down"></i></div>
+                            <svg viewBox="0 0 500 500">
+                                <defs>
+                                    <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                                </defs>
+                                <text dy="30">
+                                    <textPath xlink:href="#textcircle">Scroll down - Scroll down -</textPath>
+                                </text>
+                            </svg>
+                        </div> 
+                    </a>
+                    <div class="made-with-love ph-appear">
+                        <div class="mwl-inner">
+                            <div class="mwl-text">Made with CIPHER-EDU</div>
+                            <div class="mwl-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="page-content">
+                        <div class="tt-section-inner tt-wrap">
+
+                            <div class="tt-row">
+                                <div class="tt-col-lg-4 padding-right-lg-5-p">
+                                    <div class="tt-heading tt-heading-sm margin-bottom-60 anim-fadeinup">
+                                        <h2 class="tt-heading-title text-gray"><br class="hide-from-md"> Story</h2>
+                                    </div>
+                                </div> 
+
+                                <div class="tt-col-lg-8">
+
+                                    <div class="text-xxlg font-alter">
+                                        <p class="anim-fadeinup">2023-2024 - o'quv yilidan boshlab Navoiy davlat pedagogika instituti talabalarni talabalar turar joylariga arizalarni qabul qilish onlayn shaklda amalga oshiriladi.
+
+                                            Arizalar universitet Talabalarni turar joy bilan ta'minlash ishlarini muvofiqlashtirish bo`limi tomonidan o'rganilib chiqiladi va platformada e'lon qilinadi.
+                                            
+                                            O‘zbekiston Respublikasi oliy va o‘rta maxsus taʼlim vazirining 2019-yil 1-noyabrdagi №1019-sonli “Talaba (o‘quvchi)lar turar joyi faoliyatiga oid namunaviy hujjatlarni tasdiqlash to‘g‘risida”gi buyrug‘i asosida Termiz davlat insitutda mavjud 4 ta TTJlarga talabalarni joylashtirish yo'riqnomasi quyida keltirilgan</p>
+                                    </div>
+                                </div> 
+                            </div> 
+                    </div>
+                    <div class="tt-section">
+                        <div class="tt-section-inner">
+                            <div class="tt-content-carousel cc-shifted cursor-drag cc-scale-down cc-hide-pagination cc-hide-navigation" data-simulate-touch="true" data-speed="900">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="tt-content-carousel-item">
+                                                <figure class="cover-opacity-1">
+                                                    <img class="tt-cc-image anim-image-parallax swiper-lazy" src="{% static 'images/post/1.jpg' %}" data-src="{% static 'images/post/1.jpg' %}" alt="Image">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="tt-content-carousel-item">
+                                                <figure class="cover-opacity-1">
+                                                    <img class="tt-cc-image anim-image-parallax swiper-lazy" src="{% static 'images/post/2.jpg' %}" data-src="{% static 'images/post/2.jpg' %}" alt="Image">
+                                                </figure>
+                                            </div> 
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="tt-content-carousel-item">
+                                                <figure class="cover-opacity-1">
+                                                    <video class="tt-cc-video" loop muted preload="metadata" poster="{% static 'images/post/3.jpg' %}">
+                                                        <!-- <source src="assets/vids/office-team.mp4" type="video/mp4">
+                                                        <source src="assets/vids/office-team.webm" type="video/webm"> -->
+                                                    </video>
+                                                </figure>
+                                            </div> 
+                                        </div> 
+                                        <div class="swiper-slide">
+                                            <div class="tt-content-carousel-item">
+                                                <figure class="cover-opacity-1">
+                                                    <img class="tt-cc-image anim-image-parallax swiper-lazy" src="{% static 'images/post/4.jpg' %}" data-src="{% static 'images/post/4.jpg' %}" alt="Image">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="tt-content-carousel-item">
+                                                <figure class="cover-opacity-1">
+                                                    <img class="tt-cc-image anim-image-parallax swiper-lazy" src="{% static 'images/post/5.jpg' %}" data-src="{% static 'images/post/5.jpg' %}" alt="Image">
+                                                    
+                                                </figure>
+                                            </div> 
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="tt-content-carousel-item">
+                                                <figure class="cover-opacity-1">
+                                                    <img class="tt-cc-image anim-image-parallax swiper-lazy" src="{% static 'images/post/6.jpg' %}" data-src="{% static 'images/post/6.jpg' %}" alt="Image">
+                                                    
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tt-cc-nav-prev">
+                                    <div class="tt-cc-nav-arrow magnetic-item"></div>
+                                </div>
+                                <div class="tt-cc-nav-next">
+                                    <div class="tt-cc-nav-arrow magnetic-item"></div>
+                                </div>
+                                <div class="tt-cc-pagination hide-cursor"></div>
+
+                            </div>
+                        </div> 
+                    </div> 
+                    <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-200">
+                        <div class="tt-section-inner tt-wrap">
+                            <div class="tt-heading tt-heading-xxlg tt-heading-stroke tt-heading-center margin-bottom-10-p anim-fadeinup">
+                                <h3 class="tt-heading-subtitle text-gray">Qanday qilib joy band qilishim mumkun?</h3>
+                                <h2 class="tt-heading-title">YO'RIQNOMA</h2>
+                            </div>
+                            <div class="tt-accordion tt-ac-xlg tt-ac-borders">
+                                <div class="tt-accordion-item anim-fadeinup">
+                                    <div class="tt-accordion-heading">
+                                        <h3 class="tt-ac-head-title">Talaba va oʻquvchilarni</h3>
+                                        <div class="tt-accordion-subtext">turar joylariga joylashtirish</div>
+                                        <div class="tt-accordion-caret-wrap">
+                                            <div class="tt-accordion-caret magnetic-item"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tt-accordion-content max-width-800">
+                                        <p>Talaba va oʻquvchilarni turar joylariga joylashtirishda mavjud oʻrinlardan extiyoj va talab yuqori boʻlgan xolatlarda quyidagi mezonlar ketma- ketligi asosida oʻquvchi va talabalar ustunlikka ega boʻladi</p>
+                                    </div> 
+                                </div> 
+
+                                <div class="tt-accordion-item anim-fadeinup">
+                                    <div class="tt-accordion-heading">
+                                        <h3 class="tt-ac-head-title">Ijtimoiy muxofazaga muxtoj talablarni</h3>
+                                        <div class="tt-accordion-subtext">turar joylariga joylashtirish</div>
+                                        <div class="tt-accordion-caret-wrap">
+                                            <div class="tt-accordion-caret magnetic-item"></div>
+                                        </div>
+                                    </div> 
+                                    <div class="tt-accordion-content max-width-800">
+                                        <p>Chin yetim talaba-oʻquvchilar (kursidan qatʼiy nazar).</p>
+                                        <p>
+                                            “Mexribonlik uylari” tarbiyalanuvchilari.
+                                            Nogironligi mavjud talaba-o‘quvchilar (kursidan qatʼiy nazar).
+                                        </p>
+                                        <p>
+                                            Ijtimoiy ximoyaga muxtoj, moddiy axvoli og‘ir talabalar (shuningdek, bitta oilada 2 yoki undan ortiq shaxs t o‘lov-shartnoma asosida o‘qiyotgan b o‘lsa)</p>
+                                    </div> <!-- /.tt-accordion-content -->
+                                </div> <!-- /.tt-accordion-item -->
+
+                                <div class="tt-accordion-item anim-fadeinup">
+                                    <div class="tt-accordion-heading">
+                                        <h3 class="tt-ac-head-title">Xorijiy talablarni</h3>
+                                        <div class="tt-accordion-subtext">turar joylariga joylashtirish</div>
+                                        <div class="tt-accordion-caret-wrap">
+                                            <div class="tt-accordion-caret magnetic-item"></div>
+                                        </div>
+                                    </div> 
+                                    <div class="tt-accordion-content max-width-800">
+                                        <p>1 -2 kurs talabalari.</p>
+                                        <p>
+                                            Talaba (o‘quvchi) qizlar;
+                                            Yoshlar ittifoqining faollari
+                                        </p>
+                                        <p>
+                                            Xalqaro miqyosdagi fan olimpiadalarida g‘oliblikni qo‘lga kiritgan talabalar.
+                                        </p>
+                                        <p>
+                                            Yozgi taʼtil davrida “Fidokor” yoshlar mexnat otryadi tarkibida talabalar turar joylarini taʼmirlashda ishtirok etgan talabalar;
+                                            Talabalar turar joyida doimiy ravishda talabalar kengashi raisi, qavat sardorlari va boshqa jixatlari bilan doimiy ravishda faollik ko‘rsatib kelayotgan talabalar;</p>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150 padding-left-sm-3-p padding-right-sm-3-p bg-white-accent-2">
+                        <div class="tt-section-inner tt-wrapp">
+                            <div class="tt-testimonials-slider text-center cursor-drag ts-scale-down ts-hide-navigation anim-fadeinup" data-loop="true" data-simulate-touch="true" data-speed="900">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide font-alter">
+                                            <div class="tt-ts-item">
+                                                <div class="tt-ts-text">
+                                                    "Agarda siz talablar turarjoy majmuasidan joy olaolmagan bo'lsangiz siz uchun eng sifatli ijara honadonlarni sizga taklif qilamiz."
+                                                </div>
+                                                <div class="tt-ts-subtext">- ijar uylar ro‘yxati</div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="tt-ts-nav-prev">
+                                    <div class="tt-ts-nav-arrow magnetic-item"></div>
+                                </div>
+                                <div class="tt-ts-nav-next">
+                                    <div class="tt-ts-nav-arrow magnetic-item"></div>
+                                </div>
+                                <div class="tt-ts-pagination hide-cursor"></div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
+                        <div class="tt-section-inner tt-wrap">
+
+                                <div class="tt-row">
+                                    <!-- <div class="tt-col-lg-4 padding-right-md-5-p">
+                                        <div class="tt-heading tt-heading-sm margin-bottom-60 anim-fadeinup">
+                                            <h2 class="tt-heading-title text-gray">Honors &amp;<br class="hide-from-md"> Mentions</h2>
+                                        </div>
+                                    </div>  -->
+                                    <div class="tt-col-lg-12">
+                                        <table  class="tt-table shop-cart-table">
+                                            <tr>
+                                                <th class="scth-product-title">Shahar</th>
+                                                <th class="scth-product-title">Mahallasi</th>
+                                                <th class="scth-product-title">Manzil</th>
+                                                <th class="scth-product-title">Ijarachi</th>
+                                                <th class="scth-product-title">Telefon</th>
+                                                <th class="scth-product-title">Yigit</th>
+                                                <th class="scth-product-title">Qiz</th>
+                                                <th class="scth-product-title">Holati</th>
+                                            </tr>
+                                       
+                                        <tbody>
+                                           
+                                            {% for home in ijara %}
+                                                <tr class="shop-cart-table-item">
+                                                <td scope="row">{{home.Shahar}}</td>
+                                                <td>{{home.Mahallasi}}</td>
+                                                <td>{{home.Manzil}}</td>
+                                                <td>{{home.Ijarachi}}</td>
+                                                <td>{{home.Telefon}}</td>
+                                                <td>{{home.Yigit}}</td>
+                                                {% if home.Yigit == 'Yigit' %}
+                                                <td>{{ home.Yigit }}</td>
+                                                {% else %}
+                                                
+                                                <td>{{ home.Qiz }}</td>
+                                                {% endif %}
+                                                <td>{{home.Holati}}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <div class="tt-pagination tt-pagin-center margin-top-xlg-100 anim-fadeinup">
+                                        
+                                            <div class="tt-pagin-prev">
+                                                {%  if page_obj.has_previous %} 
+                                                <a href="?page={{ page_obj.previous_page_number }}" class="tt-pagin-item magnetic-item">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </a>
+                                                {% endif %}
+                                            </div>
+                                        
+                                        <div class="tt-pagin-numbers">
+                                            {% for p in paginator.page_range %}
+                                            
+                                                {% if p == paginator.page %}
+                                                    <a href="?page={{p}}" class="tt-pagin-item magnetic-item active">{{p}}</a>
+                                                {% elif p >= page_obj.number|add:-3 and p <= page_obj.number|add:3 %}
+                                                    <a href="?page={{p}}" class="tt-pagin-item magnetic-item">{{p}}</a>
+                                                {% endif %}  
+                                            {% endfor %}
+                                        </div>
+                                        <div class="tt-pagin-next">
+                                            {%  if page_obj.has_next %} 
+                                                <a href="?page={{ page_obj.next_page_number }}" class="tt-pagin-item tt-pagin-next magnetic-item">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    </div> 
+                                </div>
+                        </div> 
+                    </div>           
+					<footer id="tt-footer" class="footer-absolute">
+						<div class="tt-footer-inner">
+							<div class="footer-col tt-align-center-left">
+								<div class="footer-col-inner">
+									<div class="tt-btn tt-btn-link">
+										<a href="{% url 'create_ariza' %}" data-hover="Ariza yuborish">Ariza berish</a>
+									</div>
+								</div>
+							</div>
+							<div class="footer-col tt-align-center-right">
+								<div class="footer-col-inner">
+									<div class="footer-social">
+										<div class="footer-social-text"><span>Follow</span><i class="fas fa-share-alt"></i></div>
+										<div class="social-buttons">
+											<ul>
+												<li><a href="https://t.me/NavDPI_Rasmiy" class="magnetic-item" target="_blank" rel="noopener">Tg.</a></li>
+												<li><a href="https://www.instagram.com/navdpi_edu/" class="magnetic-item" target="_blank" rel="noopener">Ins.</a></li>
+												<li><a href="https://www.youtube.com/@navoiynavdpi5460" class="magnetic-item" target="_blank" rel="noopener">Yt.</a></li>
+											</ul>
+										</div> 
+									</div> 
+								</div> 
+							</div>
+						</div> 
+					</footer>
+                <!-- End tt-footer -->
+
+
+            </div>
+            <!-- End content wrap -->
+
+        </div>
+        <!-- End scroll container -->
+
+
+    </main>
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>	
+    <script src="{% static 'assets/vendor/gsap/gsap.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/gsap/ScrollToPlugin.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/gsap/ScrollTrigger.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/smooth-scrollbar.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope/imagesloaded.pkgd.min.js' %}"></script> 
+    <script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope/packery-mode.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/lightgallery/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery.mousewheel.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+
+
+
+
+
+
+</body>

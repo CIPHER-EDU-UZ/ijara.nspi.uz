@@ -59,6 +59,11 @@ def upload_excel(request):
 #     context_object_name = 'ijara' 
 
 
+class AboutListView(ListView):
+    paginate_by = 12
+    template_name = 'about.html'
+    model = Home
+    context_object_name = 'ijara'
 
 class HomeListView(ListView):
     # paginate_by = 15
