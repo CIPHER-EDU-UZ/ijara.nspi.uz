@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve or Reject Application</title>
+</head>
+<body>
+    <h1>Approve or Reject Application</h1>
+    <p>Name: {{ ariza.ism }}</p>
+    <!-- Display other application details here -->
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="approve">
+        <button type="submit">Approve</button>
+    </form>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="reject">
+        <button type="submit">Reject</button>
+    </form>
+</body>
+</html>

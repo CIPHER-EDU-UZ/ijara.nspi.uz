@@ -356,7 +356,7 @@
                                             
                                                 {% if p == paginator.page %}
                                                     <a href="?page={{p}}" class="tt-pagin-item magnetic-item active">{{p}}</a>
-                                                {% elif p >= page_obj.number|add:-3 and p <= page_obj.number|add:3 %}
+                                                {% elif p >= page_obj.number|add:-6 and p <= page_obj.number|add:6 %}
                                                     <a href="?page={{p}}" class="tt-pagin-item magnetic-item">{{p}}</a>
                                                 {% endif %}  
                                             {% endfor %}

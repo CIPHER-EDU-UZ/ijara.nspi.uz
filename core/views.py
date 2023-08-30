@@ -60,7 +60,7 @@ def upload_excel(request):
 
 
 class AboutListView(ListView):
-    paginate_by = 12
+    paginate_by = 3
     template_name = 'about.html'
     model = Home
     context_object_name = 'ijara'
@@ -178,3 +178,24 @@ def approve_ariza(request, unique_id):
 
 def test(request):
     return render(request, 'test.html',)
+
+def approve_or_reject_application(request, unique_id):
+    if request.method == 'POST':
+        ariza = Ariza.objects.get(unique_id=unique_id)
+        action = request.POST.get('action')  # This should be a hidden input in your template
+
+        if action == 'approve':
+            ariza.approve()  # Assuming you have an 'approve' method in your Ariza model
+            message = f'Application by {ariza.ism} has been approved.'
+        elif action == 'reject':
+            ariza.reject()  # You can add a 'reject' method in your Ariza model
+            message = f'Application by {ariza.ism} has been rejected.'
+        else:
+            message = 'Invalid action.'
+
+        context = {'message': message}
+        return render(request, 'approval_result.html', context)
+    else:
+        ariza = Ariza.objects.get(unique_id=unique_id)
+        context = {'ariza': ariza}
+        return render(request, 'approve_or_reject.html', context)
