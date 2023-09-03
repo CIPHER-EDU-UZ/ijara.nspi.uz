@@ -10,6 +10,9 @@ from django.views.generic.detail import DetailView
 from django.views import View
 from django.contrib import messages
 import uuid
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
@@ -90,7 +93,26 @@ class ArizaDetailView(DetailView):
         if not self.request.user.is_staff:
             queryset = queryset.filter(user=self.request.user)
         return queryset
-    
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('ariza_list')  # Redirect to dashboard view after successful login
+        else:
+            error_message = "Invalid login credentials. Please try again."
+            return render(request, 'registration/login.html', {'error_message': error_message})
+    return render(request, 'registration/login.html')
+
+@login_required 
+def custom_logout(request):
+    logout(request)
+    return redirect(reverse('login'))  
+
+@login_required
 def ariza_list(request):
     if request.method == 'POST':
         action = request.POST.get('action')
@@ -100,7 +122,7 @@ def ariza_list(request):
             Ariza.objects.filter(id__in=ariza_ids).update(approved=True)
         elif action == 'reject':
             Ariza.objects.filter(id__in=ariza_ids).update(approved=False)
-    arizalar = Ariza.objects.order_by('-approved', 'ism')
+    arizalar = Ariza.objects.all().order_by('-approved', 'ism')
     
     context = {
         'arizalar': arizalar,
