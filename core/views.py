@@ -90,7 +90,23 @@ class ArizaDetailView(DetailView):
         if not self.request.user.is_staff:
             queryset = queryset.filter(user=self.request.user)
         return queryset
-
+    
+def ariza_list(request):
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        ariza_ids = request.POST.getlist('ariza_ids')
+        
+        if action == 'approve':
+            Ariza.objects.filter(id__in=ariza_ids).update(approved=True)
+        elif action == 'reject':
+            Ariza.objects.filter(id__in=ariza_ids).update(approved=False)
+    arizalar = Ariza.objects.order_by('-approved', 'ism')
+    
+    context = {
+        'arizalar': arizalar,
+    }
+    
+    return render(request, 'ariza_list.html', context)
 class ArizaDetailView(DetailView):
     model = Ariza
     template_name = 'ariza_detail.html'

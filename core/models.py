@@ -94,7 +94,37 @@ class Ariza(models.Model):
     
     unique_id = models.CharField(max_length=10, unique=True, editable=False,)
     comments = models.TextField(blank=True, verbose_name='Comments')
+    approved = models.BooleanField(default=False, verbose_name="Approved")
+    
+    def approve(self):
+        """
+        Approve the application.
+        """
+        if not self.approved:
+            self.approved = True
+            self.save()
 
+    def reject(self):
+        """
+        Reject the application.
+        """
+        if self.approved:
+            self.approved = False
+            self.save()
+
+    def toggle_approval(self):
+        """
+        Toggle the approval status of the application.
+        """
+        self.approved = not self.approved
+        self.save()
+
+    class Meta:
+        verbose_name = "Ariza"
+        verbose_name_plural = "Arizalar"
+
+    def __str__(self):
+        return self.ism
     def validate_unique_ism(self):
         existing_record = Ariza.objects.filter(ism=self.ism).exclude(pk=self.pk).first()
         if existing_record:

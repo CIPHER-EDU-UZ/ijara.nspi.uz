@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariza List</title>
+</head>
+<body>
+    <h1>Ariza List</h1>
+    
+    <form method="post" action="{% url 'ariza_list' %}">
+        {% csrf_token %}
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Unique ID</th>
+                    <th>Ism</th>
+                    <th>Familiya</th>
+                    <th>Approved</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ariza in arizalar %}
+                    <tr>
+                        <td><input type="checkbox" name="ariza_ids" value="{{ ariza.id }}"></td>
+                        <td>{{ ariza.unique_id }}</td>
+                        <td>{{ ariza.ism }}</td>
+                        <td>{{ ariza.familiya }}</td>
+                        <td>{% if ariza.approved %}Approved{% else %}Not Approved{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <div>
+            <label>Actions:</label>
+            <select name="action">
+                <option value="approve">Approve</option>
+                <option value="reject">Reject</option>
+            </select>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
