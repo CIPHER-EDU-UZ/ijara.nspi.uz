@@ -12,6 +12,9 @@ urlpatterns = [
     path('test/', test, name='test'),
     path('search/', search_application, name='search_application'),
     path('upload/', upload_excel, name='upload_excel'),
+    path('ariza-list/', ariza_list, name='ariza_list'),
+    path('login/', user_login, name='login'),
+    path('logout/', custom_logout, name='custom_logout'),
     # path('approve-reject/<uuid:unique_id>/', approve_or_reject_application, name='approve_or_reject'),
 ]
 

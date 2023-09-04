@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z#z@g@32pspnp7kfhuhuu=botwphhib6rdoq@jvbedww^trwfe'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ttj.cipher-edu.uz', 'www.ttj.cipher-edu.uz','127.0.0.1']
 
 handler404 = 'core.views.page_not_found'
 # Application definition
@@ -120,12 +120,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/home/ttj.cipher-edu.uz/ttj/static/'
+STATIC_ROOT = BASE_DIR / '/home/ttj.cipher-edu.uz/ttj/jstaticfiles'
 STATICFILES_DIRS=[
-    BASE_DIR/ "static"
+    BASE_DIR/ "/home/ttj.cipher-edu.uz/ttj/static"
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
 ]
 MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login'
 
 AWS_ACCESS_KEY_ID = 'AKIATJQ3IWD4NTD4Z7SK'
 AWS_SECRET_ACCESS_KEY = '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'

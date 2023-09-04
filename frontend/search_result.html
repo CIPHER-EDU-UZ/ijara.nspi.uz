@@ -68,17 +68,25 @@
 													</div> 
 												</li>
 												<li>
-                                                    <a href="{% url 'create_ariza' %}">Ariza berish</a>
-                                                </li>
-                                                <li>
+													<a href="{% url 'about' %}">
+														Yotoqxona qaqida
+													</a>
+												</li>
+												<li><a href="{% url 'create_ariza' %}">Ariza berish</a></li>
+												<li>
 													<a href="{% url 'search_application' %}">Ariza holatini tekshirish</a>
+												</li>
+												<li>
+													<a href="{% url 'ariza_list' %}">
+														Xodimlar uchun
+													</a>
 												</li>
 											</ul>
 										</div> 
-									</div> 
+									</div>
 								</div> 
 								<div class="bg-noise"></div>
-							</nav>
+							</nav> 
 						</div> 
 					</div> 
 				</header>
@@ -122,7 +130,7 @@
                                     </td>
                                     <td>
                                         {% if ariza.approved %}
-                                            <bdi> <span style="color: greenyellow;"> Tasdiqlangan </span></bdi>
+                                            <bdi> <span style="color: greenyellow;"> Tasdiqlangan! Iltimos biz bilan aloqaga chiqing </span></bdi>
                                             <bdi>{% else %} <span  style="color: red;">Ariza tasdiqlanmagan</span></bdi>
                                         {% endif %}
                                     </td>
